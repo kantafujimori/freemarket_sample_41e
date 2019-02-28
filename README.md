@@ -123,8 +123,8 @@
 |Column|Type|Options|
 |------|----|-------|
 
-|seller_id| |null: false, foreign_key: true|
-|buyer_id| |null: false, foreign_key:true
+|seller_id|references|null: false, foreign_key: true|
+|buyer_id|references|null: false, foreign_key:true
 |name|string|null: false,index:true|
 |info|text|null: false|
 |price|integer|null: false|
@@ -136,7 +136,6 @@
 |sell_status_id|references|null: false, foreign_key: true|
 |shipping_method_id|references|null: false, foreign_key: true|
 
-|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many : images
