@@ -122,7 +122,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|null: false, foreign_key:true|
 |name|string|null: false,index:true|
