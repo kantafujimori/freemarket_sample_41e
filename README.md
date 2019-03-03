@@ -25,7 +25,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|uid|integer||
+|sns_uid|integer||
 |provider|integer||
 |user_id|integer|null: false, foreign_key: true|
 
