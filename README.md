@@ -6,9 +6,7 @@
 |phone_number|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|birth_year|date|null: false|
-|birth_month|date|null: false|
-|birth_day|date|null: false|
+|birthday|date|null: false|
 |icon_picture|string||
 |profile|text||
 |background_image|string||
