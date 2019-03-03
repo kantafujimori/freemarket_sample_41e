@@ -112,9 +112,9 @@
 |info|text|null: false|
 |price|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
+|status|enum|null: false|
 |brand_id|references|null: false, foreign_key: true|
 |size_id|references|null: false, foreign_key: true|
-|status_id|references|null: false, foreign_key: true|
 |delivery_fee_owner_id|references|null: false, foreign_key: true|
 |sell_status_id|references|null: false, foreign_key: true|
 |shipping_method_id|references|null: false, foreign_key: true|
@@ -178,13 +178,6 @@ has_many :products
 ### Association
 has_many :products
 
-## Statusテーブル
-|Column|Type|Options|
-|------|----|-------|
-|status|string|null: false|
-
-### Association
-has_many :products
 
 ## Delivery_fee_ownerテーブル
 |Column|Type|Options|
