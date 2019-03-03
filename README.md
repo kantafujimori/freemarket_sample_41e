@@ -9,7 +9,6 @@
 |birthday|date|null: false|
 |icon_picture|string||
 |profile|text||
-|background_image|string||
 |point|integer||
 
 
