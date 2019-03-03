@@ -2,52 +2,39 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
+|nickname|string|null: false|
+|telephone|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
+|birth_year|date|null: false|
+|birth_month|date|null: false|
+|birth_day|date|null: false|
+|icon_picture|string||
+|profile|text||
+|background_image|string||
+|point|integer||
+
 
 ### Association
-- has_many :messages
-- has_many :members
-- has_many :groups, through :members
+- has_many :products
+- has_many :comments
+- has_many :sms_credentials
+- has_many :evaluations, through :user_evaluations
+- has_one  :credit
+- has_one  :address
 
 
-## membersテーブル
+## sms_credentialsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|nul: false, foreign_key: true|
-|group_id|integer|nul: false, foreign_key: true|
+|uid|integer||
+|provider|integer||
+|user_id|integer|null: false, foreign_key: true|
+
 
 ### Association
 - belongs_to :user
-- belongs_to :group
-
-
-## groupsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false, add_index|
-
-### Association
-- has_many :messages
-- has_many :members
-- has_many :users, through :members
-
-
-## messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|body|text||
-|image|string||
-|group_id|integer|null :false, foreign_key: true|
-|user_id|integer|null :false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :group
 
 
 ## User_evaluationsテーブル
