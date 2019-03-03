@@ -3,7 +3,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|telephone|string|null: false, unique: true|
+|phone_number|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |birth_year|date|null: false|
