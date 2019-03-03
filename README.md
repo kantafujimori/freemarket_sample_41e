@@ -16,7 +16,7 @@
 - has_many :products
 - has_many :comments
 - has_many :sms_credentials
-- has_many :evaluations, through :user_evaluations
+- has_many :evaluations
 - has_one  :credit
 - has_one  :address
 
@@ -32,18 +32,6 @@
 
 ### Association
 - belongs_to :user
-
-
-## User_evaluationsテーブル
-
-|Colum|Type|Option|
-|-----|----|------|
-|user_id|references|null: false, foreign_key: true|
-|evaluation_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :evaluation
 
 
 ## Creditsテーブル
@@ -83,10 +71,12 @@
 
 |Colum|Type|Option|
 |-----|----|------|
+|user_id|references|null: false, foreign_key: true|
 |value|string|null: false|
 
+
 ### Association
-- has_many :user_evaluations
+- belongs_to :user
 
 
 ## Commentsテーブル
