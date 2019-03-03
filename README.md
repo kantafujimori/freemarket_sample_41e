@@ -27,7 +27,7 @@
 |------|----|-------|
 |sns_uid|integer||
 |provider|integer||
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -38,8 +38,8 @@
 
 |Colum|Type|Option|
 |-----|----|------|
-|user_id|integer|null: false, foreign_key: true|
-|evaluation_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|evaluation_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -54,7 +54,7 @@
 |expiration_month|integer|null: false|
 |expiration_year|integer|null: false|
 |security_code|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -73,7 +73,7 @@
 |building_name|string|
 |first_name_phonetic|string|null: false|
 |last_name_phonetic|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -94,8 +94,8 @@
 |Colum|Type|Option|
 |-----|----|------|
 |text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -138,7 +138,7 @@
 ## Imageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|foreign_key|
+|product_id|references|foreign_key|
 |image|string|
 
 ### Association
