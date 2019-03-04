@@ -1,0 +1,34 @@
+.wrapper{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.top-main-vidual{
+  height: 390px;
+  background-image: url('/top-main-vidual.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  &__content{
+    position: absolute;
+    margin-top: 10px;
+    right: 50%;
+  }
+  &__right{
+    height: 390px;
+    position: absolute;
+    left: 50%;
+  }
+}
+h2{
+  font-weight: bold;
+  font-size: 55px;
+  margin-bottom: 15px;
+  line-height: 130%;
+}
+p{
+  font-size: 20px;
+  line-height: 140%;
+}
+
