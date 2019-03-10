@@ -69,3 +69,4 @@ gem 'haml-rails'
 gem 'devise'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
+gem "carrierwave"
