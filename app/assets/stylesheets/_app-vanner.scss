@@ -1,0 +1,49 @@
+.app-vanner{
+  background-image: url('/app-vanner-background.jpeg');
+  background-repeat: no-repeat;;
+  background-size: cover;
+  width: 100%;
+  height: 260px;
+  position: relative;
+  &__content {
+    position: absolute;
+    right: 50%;
+  }
+  &__right {
+    position: absolute;
+    left: 55%;
+    height: 260px;
+  }
+}
+h2.app-vanner-h{
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 55px;
+}
+p.app-vanner-p {
+  font-size: 38px;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+ul.app-vanner__content__store{
+  position: absolute;
+  left: 5%;
+}
+li.app-vanner__content__store-li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.mercari-icon{
+  height: 60px;
+  position: absolute;
+  bottom: 1%;
+  right: 90%;
+}
+.app-vanner__image{
+  background-color: rgba(0,0,0,0.3);
+  height: 260px;
+}
+
