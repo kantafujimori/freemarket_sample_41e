@@ -1,8 +1,7 @@
 - @products.each do |product|
   .item-box
-    / %img{ :src => 'mercari_icon.png', :class => 'item-box__image'}
-    %img{ :src => product.images[0], :class => 'item-box__image'}
-    / = image_tag product.images[0], class: 'item-box__image'
+    - if product.images.present?
+      = image_tag product.images.first.image, class: 'item-box__image'
     .item-box__name
       = product.name
     .item-box__price
@@ -10,6 +9,3 @@
       = product.price
     .item-box__tax
       (税込)
-
-
-/ product.images.where('created_at > ?').first
