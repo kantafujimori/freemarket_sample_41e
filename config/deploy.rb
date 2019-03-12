@@ -4,7 +4,7 @@ set :application, "freemarket_sample_41e"
 set :repo_url, "git@github.com:yukihayashi06/freemarket_sample_41e.git"
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
-
+set :bundle_env_variables, { nokogiri_use_system_libraries: 1 }
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1'
 
