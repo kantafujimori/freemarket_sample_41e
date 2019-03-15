@@ -1,0 +1,118 @@
+.sign-up-page{
+  background-color: #EEEEEE;
+  height: 100vh;
+  width: 100%;
+}
+.sign-up-header{
+  height: 128px;
+  text-align: center;
+}
+.mercari-sign-up{
+  height: 149px;
+  width: 185px;
+}
+.single-main{
+  width: 100%;
+}
+hr{
+  color: #EEEEEE;
+}
+.fas fa-envelope-o{
+  position: absolute;
+  left: 3%;
+}
+.facebook-img{
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  left: 3%;
+}
+.google-img{
+  height: 40px;
+  width: 40px;
+}
+.mercari-registration{
+  text-decoration: none;
+  color: black;
+}
+.single-content{
+  width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  &__header{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 32px 0;
+  }
+  &__message{
+    width: 320px;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+  &__mail{
+    background-color: #EEEEEE;
+    margin-top: 64px;
+    padding: 5px 0 5px 10px;
+    position: relative;
+  }
+  &__facebook{
+    padding: 12px 0;
+    background-color: #0000CD;
+    margin-top: 13px;
+    position: relative;
+    height: 20px;
+  }
+  &__google{
+    background-color: white;
+    border: #979797 solid 1px;
+    margin-top: 13px;
+    margin-bottom: 64px;
+    position: relative;
+  }
+  &__one{
+    position: absolute;
+    right: 32%;
+    bottom: 28%;
+    color: black;
+  }
+  &__two{
+    position: absolute;
+    right: 35%;
+    bottom: 30%;
+    color: white;
+  }
+  &__three{
+    position: absolute;
+    right: 37%;
+    bottom: 30%;
+  }
+}
+.mercari-sign-up-gray{
+  height: 65px;
+  width: 80px;
+}
+.sign-up-footer{
+  margin-top: 37px;
+  &__a{
+    text-decoration: none;
+    color: black;
+  }
+  &__ul{
+    text-align: center;
+    font-size: 13px;
+  }
+  &__li{
+    display: inline;
+    margin-right: 13px;
+  }
+  &__img{
+    text-align: center;
+    margin-top: 40px;
+  }
+  &__last{
+    text-align: center;
+    font-size: 8px;
+  }
+}
