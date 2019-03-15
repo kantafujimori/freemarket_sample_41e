@@ -1,7 +1,8 @@
 FactoryBot.define do
 
-    factory :images do
-      image "sample.jpg"
-      product
-    end
+  factory :image do
+    product
+    image              {"abe.jpg"}
+    product_id         {2}
   end
+end

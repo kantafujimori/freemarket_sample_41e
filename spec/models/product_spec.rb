@@ -1,9 +1,16 @@
 require 'rails_helper'
-describe Product do
-    #productにタイトルと価格が入っていれば有効であること
-    it "is valid with name and price" do
-        product = build(:product)
-        image = product.images.build(:images) 
-      expect(@product).to be_valid
+
+describe Product, type: :model do
+
+  describe '#create' do
+    it "is valid without a name" do
+      product = build(:product)
+      expect(product).to be_valid
     end
+    it "is invalid without a name" do
+      product = build(:product, name:"")
+      expect(product).to be_invalid
+    end
+
   end
+end
