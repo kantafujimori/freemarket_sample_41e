@@ -4,12 +4,14 @@
   .picup-container__item
     %a{ :href => '', :class => 'picup-container__name'}
       レディース新着アイテム
-    = render "item"
+    - @products.each do |product|
+      = render partial: "item", locals: { product: product }
     %a{ :href => '', :class => 'picup-container__last'}
       すべての商品を見る
   .picup-container__item
     %a{ :href => '', :class => 'picup-container__name'}
       レディース新着アイテム
-    = render "item"
+    - @products.each do |product|
+      = render partial: "item", locals: { product: product }
     %a{ :href => '', :class => 'picup-container__last'}
       すべての商品を見る
