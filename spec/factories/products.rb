@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :product do
-    name              {"abe"}
+    name              {Faker::Name.name}
     price             {120}
 
     after(:create) do |image|

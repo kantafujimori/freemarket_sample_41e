@@ -2,7 +2,7 @@ FactoryBot.define do
 
   factory :image do
     product
-    image              {"abe.jpg"}
+    image              {Faker::Avatar.image}
     product_id         {2}
   end
 end
