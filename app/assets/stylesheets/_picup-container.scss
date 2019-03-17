@@ -33,6 +33,8 @@ a:hover {
   display: inline-block;
   &__image {
     height: 200px;
+    width: 228px;
+    object-fit: contain;
   }
   &__name {
     margin: 10px 15px;
