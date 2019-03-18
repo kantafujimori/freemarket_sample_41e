@@ -1,0 +1,15 @@
+.single-footer {
+    width: 456px;
+    margin: 0 auto;
+    z-index: 1;
+    height: 250px;
+    padding: 40px 0;
+    text-align: center;
+}
+@media screen and (min-width: 768px){
+.single-footer {
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+}
+}
