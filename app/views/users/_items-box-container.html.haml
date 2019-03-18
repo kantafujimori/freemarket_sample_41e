@@ -1,1 +1,5 @@
-.a bb
+.items-box-container
+  %h2 この出品者の商品
+  .items-box-content
+    - @products.each do |product|
+      = render partial: "products/item", locals: { product: product }
