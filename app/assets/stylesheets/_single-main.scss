@@ -1,11 +1,7 @@
 .l-single-container {
     background: #fff;
-}
-@media screen and (min-width: 768px){
-.l-single-container {
     width: 700px;
     margin: 0 auto;
-}
 }
 .l-single-head {
     padding: 24px 8px;
@@ -20,8 +16,10 @@
 }
 }
 //入力フォーム
+//出品画像
 .sell-form{
 border-top: 1px solid #eee;
+padding-right: 40px;
 }
 .sell-upload-box {
 width: 620px;
@@ -42,4 +40,73 @@ p{
     color: #fff;
     font-size: 12px;
     vertical-align: top;
+}
+.sell-content{
+    padding: 40px;
+    border-top: 1px solid #eee;
+}
+.form-group {
+    margin: 40px 0 0;
+    label{
+        font-weight: 600;
+    }
+    &:first-child{
+        margin: 0;
+    }
+    .input-default{
+        width: 100%;
+        margin: 8px 0 0;
+    }
+    select{
+        width: 100%;
+    }
+}
+//商品名
+.input-default{
+padding: 10px 16px 8px;
+border-radius: 4px;
+border: 1px solid #ccc;
+background: #fff;
+line-height: 1.5;
+font-size: 16px;
+}
+//商品の説明
+.textarea-default{
+    margin: 8px 0 0;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 104px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+
+}
+.sell-sub-head{
+    float: left;
+    color: #888;
+    font-size: 14px;
+}
+.sell-form-box {
+    float: right;
+    width: 400px;
+    margin: 0;
+}
+.select-wrap {
+    position: relative;
+    background: #fff;
+}
+.select-default {
+    position: relative;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
 }
