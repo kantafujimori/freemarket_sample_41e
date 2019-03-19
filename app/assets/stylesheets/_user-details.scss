@@ -7,21 +7,33 @@
 
 .user-details {
   margin: auto;
-  // text-align: center;
   max-width: 700px;
 }
 
-.users-detail-profile-box {
+.users-detail {
   text-align: center;
-  height: 320px;
+  height: 325px;
   background-image: url("https://www.mercari.com/jp/assets/img/user/user_bg.jpg?52889117");
+  &__photo__image {
+      margin-top: 50px;
+  width: 190px;
+  height: 190px;
+  border-radius: 95px;
+  object-fit: cover;
+  }
+  &__score {
+    padding-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    span {
+      padding: 0 20px;
+    }
+  }
 }
 
-.user_profile_image {
-  margin-top: 50px;
-  width: 180px;
-  height: 180px;
-  border-radius: 90px;
+
+.users-detail-profile-box__rate {
+  display: frex;
 }
 
 .white {
@@ -29,24 +41,37 @@
 }
 
 .users-detail-ratings-box {
-  text-align: center;
   border-bottom: solid 1.5px #EEEEEE;
-  padding: 15px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.users-detail-rating {
+  padding: 0 30px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .fas.fa-laugh {
-  color: #e34f26;
-  border-radius: 10px;
-
+  font-size: 25px;
+  color: #EF5185;
+  padding-right: 30px;
 }
 
 .fas.fa-meh{
-   color: orange;
+  font-size: 25px;
+  color: #FBB046;
+  padding-right: 30px;
 }
 
 .fas.fa-frown {
-  color:#1ab7ea;
+  font-size: 25px;
+  color: #6AB5D8;
+  padding-right: 30px;
 }
+
+
 
 .item-social-media-box {
   background-color: white;
