@@ -1,11 +1,11 @@
 .clearfix{
     clear: both;
 }
+//header
 .l-single-container {
     background: #fff;
     width: 700px;
     margin: 0 auto;
-    height:150vh;
 }
 .l-single-head {
     padding: 24px 8px;
@@ -23,7 +23,6 @@
 //出品画像
 .sell-form{
 border-top: 1px solid #eee;
-padding-right: 40px;
 }
 .sell-upload-box {
 width: 620px;
@@ -51,8 +50,10 @@ p{
 }
 .form-group {
     margin: 40px 0 0;
+    padding-right: 30px;
     label{
         font-weight: 600;
+            display: inline-block;
     }
     &:first-child{
         margin: 0;
@@ -95,13 +96,14 @@ font-size: 16px;
 }
 .sell-form-box {
     float: right;
-    width: 400px;
+    width: 370px;
     margin: 0;
 }
 .select-wrap {
     position: relative;
     background: #fff;
     margin: 8px 0 0;
+    width: 370px;
     i{
     position: absolute;
     top: 10px;
@@ -118,16 +120,6 @@ font-size: 16px;
     .fa-angle-down{
         color: #888;
     }
-    .icon-arrow-bottom {
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        z-index: 2;
-        color: #888;
-        font-size: 8px;
-        -webkit-transform: translate(0, -50%);
-        transform: translate(0, -50%);
-    }
 }
 .select-default {
     position: relative;
@@ -140,4 +132,44 @@ font-size: 16px;
     font-size: 16px;
     line-height: 1.5;
     cursor: pointer;
+}
+.form-question{ 
+text-decoration: none;   
+display: inline-block;
+width: 14px;
+height: 14px;
+border-radius: 50%;
+background: #0099e8;
+color: #fff;
+line-height: 14px;
+font-size: 12px;
+text-align: center;
+}
+//販売価格
+.sell-price{
+    list-style: none;
+    
+    .form-group{
+    }
+    &>li {
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+    }
+    &>li:first-child {
+        padding: 0 0 24px;
+        border: 0;
+    }
+}
+.sell-price-input{
+    text-align: right;
+    width: 50%;
+}
+.l-left{
+    float: left;
+    width: 50%;
+    line-height: 48px;
+}
+.l-right{
+    float: right;
+    width: 50%;
 }
