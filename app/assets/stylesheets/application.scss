@@ -27,8 +27,19 @@ button, input, select, textarea {
     font-family: inherit;
     font-style: inherit;
 }
-clearfix{
-content: '';
-display: block;
-clear: both;
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+i[class^='icon-'], i[class*='icon-'] {
+display: inline-block;
+    font-family: 'icon-font';
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
 }

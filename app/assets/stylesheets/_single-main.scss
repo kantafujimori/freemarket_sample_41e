@@ -1,3 +1,6 @@
+.clearfix{
+    clear: both;
+}
 .l-single-container {
     background: #fff;
     width: 700px;
@@ -98,6 +101,33 @@ font-size: 16px;
 .select-wrap {
     position: relative;
     background: #fff;
+    margin: 8px 0 0;
+    i{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    }
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }     
+      select::-ms-expand {
+        display: none;
+    }
+    .fa-angle-down{
+        color: #888;
+    }
+    .icon-arrow-bottom {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        z-index: 2;
+        color: #888;
+        font-size: 8px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+    }
 }
 .select-default {
     position: relative;
