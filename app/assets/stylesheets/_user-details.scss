@@ -5,16 +5,11 @@
   padding-top: 25px;
 }
 
-.white {
-  background-color: white;
-}
-
-.user-details {
-  margin: auto;
-  max-width: 700px;
-}
 
 .users-detail {
+  background-color: white;
+  margin: auto;
+  max-width: 700px;
   text-align: center;
   height: 325px;
   background-image: url("https://www.mercari.com/jp/assets/img/user/user_bg.jpg?52889117");
@@ -34,8 +29,10 @@
     }
   }
   &__rating {
+    background-color: white;
     border-bottom: solid 1.5px #EEEEEE;
-    padding: 10px 0;
+    margin-top: 10px;
+    padding: 5px 0;
     display: flex;
     justify-content: center;
     &__list {
@@ -53,14 +50,19 @@
     }
   }
   &__description {
-     padding: 30px 50px 120px 50px;
+    background-color: white;
+    padding: 30px 50px 120px 50px;
+    height: 180px;
   }
 }
 
 .item-social-media-box {
   background-color: white;
   text-align: center;
-  padding-bottom: 50px;
+  max-width: 700px;
+  height: 100px;
+  margin-top: 220px;
+  padding-bottom: 20px;
   .fab {
     margin: 5px;
   }
