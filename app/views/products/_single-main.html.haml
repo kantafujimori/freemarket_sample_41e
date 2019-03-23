@@ -10,7 +10,16 @@
               出品画像
               %span.form-require
                 必須
-            %p 最大10枚までアップロードできます         
+            %p 最大10枚までアップロードできます
+            .sell-dropbox-container.clearfix.state-image-number-10
+              .sell-upload-items-container
+                .sell-upload-items.have-item-0
+              .sell-upload-drop-box.have-item-0
+                %input{type:"file",name:"image1",style:"display:none;",multiple:true,id:"file"}
+                  %pre.visible-pc#btn
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+                  %i.fa.fa-camera{style:"display: none;"}
           .sell-content
             .form-group
               %label
@@ -89,12 +98,12 @@
                   .l-left
                     販売手数料 (10%)
                   .l-right
-                    ー
+                    %p -
                 %li.clearfix.bold
                   .l-left
                     販売利益
                   .l-right
-                    ー
+                    %p -
           .modal{role:"dialog", tabindex:"-1"}
             .modal-inner
           .sell-content.sell-btn-box
@@ -116,4 +125,3 @@
               出品する
             .btn-default.btn-gray
               もどる
-                  
