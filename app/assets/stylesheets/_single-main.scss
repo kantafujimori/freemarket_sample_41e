@@ -1,8 +1,10 @@
-@mixin clearfix{
+@mixin clearfix {
+  clear: both;
+  &:after {
+    content: '';
+    display: block;
     clear: both;
-}
-.bold {
-  font-weight: 600;
+  }
 }
 @mixin form-box {
   float: right;
@@ -92,6 +94,9 @@
         float: left;
         color: #888;
         font-size: 14px;
+      }
+      .bold {
+        font-weight: 600;
       }
       .form-group {
         margin: 40px 0 0;

@@ -24,12 +24,12 @@
   small{
     font-size: 13px;
   }
-}
-.single-footer-logo {
-  width: 80px;
-  height: 65px;
-  margin: 40px auto 0;
-  a{
-    display: block;
+  &__logo{
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    a{
+      display: block;
+    }
   }
 }
