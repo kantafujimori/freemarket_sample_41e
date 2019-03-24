@@ -1,88 +1,88 @@
 %main.single-main
-  %section.l-single-container.buy-item-container
-    .div#sell-container
-      .sell-container-inner
-        %h2.l-single-head 
+  %section.single-container.buy-item-container
+    .sell-container
+      .sell-container__inner
+        %h2.sell-container__head
           商品の情報を入力
-        %form.sell-form  
-          .sell-upload-box
-            %h3.sell-upload-head
+        %form.sell-container__form
+          .sell__upload-box
+            %h3.sell__upload-box_head
               出品画像
-              %span.form-require
+              %span.sell__upload-box_form.form-require
                 必須
             %p 最大10枚までアップロードできます         
           .sell-content
-            .form-group
+            .sell-content__name_form
               %label
                 商品名
-                %span.form-require
+                %span.sell-content__name_require.form-require
                   必須
-              %input.input-default{placeholder:"商品名（必須 40文字まで)"}
-            .form-group
+              %input.sell-content__input.input-default{placeholder:"商品名（必須 40文字まで)"}
+            .sell-content__desc.form-group
               %label
                 商品の説明
-                %span.form-require
+                %span.sell-content__desc_require.form-require
                   必須
-              %textarea.textarea-default{rows:"5",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}    
+              %textarea.sell-content__desc_textarea.textarea-default{rows:"5",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
           .sell-content.clearfix
-            %h3.sell-sub-head 商品の詳細
-            .sell-form-box
-              .form-group
+            %h3.sell-content__detail-head.sub-head 商品の詳細
+            .sell-content__detail.form-box
+              .sell-content__detail_form.form-group
                 %label
                   カテゴリー
-                  %span.form-require
+                  %span.sell-content__detail_require.form-require
                     必須
-                .select-wrap
-                  %select.select-default    
-                  %i.fa.fa-angle-down.fa-2x   
-              .form-group
+                .sell-content__select-wrap
+                  %select.sell-content__select-default
+                  %i.fa.fa-angle-down.fa-2x
+              .sell-content__detail_form.form-group
                 %label
                   カテゴリー
-                  %span.form-require
-                    必須   
-                .select-wrap
-                  %select.select-default
-                  %i.fa.fa-angle-down.fa-2x   
+                  %span.sell-content__detail_require.form-require
+                    必須
+                .sell-content__select-wrap
+                  %select.sell-content__select-default
+                  %i.fa.fa-angle-down.fa-2x
           .sell-content.clearfix
-            %h3.sell-sub-head 配送について
+            %h3.sell-content__delivery-head.sub-head 配送について
             = link_to "?","https://mercari.com/jp/help_center/article/68/",target:"_blank",class:"form-question"
-            .sell-form-box
-              .form-group
+            .sell-content__delivery.form-box
+              .sell-content__delivery_form.form-group
                 %label
                   配送料の負担
-                  %span.form-require
+                  %span.sell-content__delivery_require.form-require
                     必須
-                .select-wrap
-                  %select.select-default    
+                .sell-content__select-wrap
+                  %select.sell-content__select-default
                   %i.fa.fa-angle-down.fa-2x   
-              .form-group
+              .sell-content__delivery_form.form-group
                 %label
                   発送元の地域
-                  %span.form-require
+                  %span.sell-content__delivery_require.form-require
                     必須   
-                .select-wrap
-                  %select.select-default
+                .sell-content__select-wrap
+                  %select.sell-content__select-default
                   %i.fa.fa-angle-down.fa-2x   
-              .form-group
+              .sell-content__delivery_form.form-group
                 %label
                   発送までの日数
                   %span.form-require
                     必須   
-                .select-wrap
-                  %select.select-default
+                .sell-content__select-wrap
+                  %select.sell-content__select-default
                   %i.fa.fa-angle-down.fa-2x
           .sell-content.clearfix
-            %h3.sell-sub-head 販売価格(300〜9,999,999)
+            %h3.sell-content__price-head.sub-head 販売価格(300〜9,999,999)
             = link_to "?","https://mercari.com/jp/help_center/article/68/",target:"_blank",class:"form-question"
-            .sell-form-box
-              %ul.sell-price
-                %li.form-group
+            .sell-content__price.form-box
+              %ul.sell-content__price-list
+                %li.sell-content__price-list_form.form-group
                   .clearfix
                     %label.l-left
                       価格
-                      %span.form-require
+                      %span.sell-content__price_require.form-require
                         必須              
-                    .l-right.sell-price-input
+                    .l-right.sell-content__price_input
                       ¥  
                       %input.input-default{placeholder:"例）300"}   
                 %li.clearfix
