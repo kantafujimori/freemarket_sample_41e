@@ -1,23 +1,11 @@
 .single-header {
+  height: 90px;
     text-align: center;
     h1{
         margin: 40px 0 0;
     }
-}
-@media screen and (min-width: 768px){
-.single-header {
-    height: 90px;
-}
-}
-
-.single-header img{
-    width: 120px;
-    height: 33px;
-}
-
-@media screen and (min-width: 768px){
-.single-header img {
+  img{
     width: 185px;
     height: 49px;
-}
+  }
 }
