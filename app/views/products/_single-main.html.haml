@@ -97,8 +97,8 @@
                     ー
           .modal{role:"dialog", tabindex:"-1"}
             .modal-inner
-          .sell-content.sell-btn-box
-            %div
+          .sell-content.sell-contents__sell-btn-box
+            .sell-content__sell-btn-box
               %p
                 = link_to "禁止されている出品","https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"
                 、
@@ -112,8 +112,8 @@
                 また、出品をもちまして
                 = link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/"
                 に同意したことになります。
-            %button.btn-default.btn-red
+            %button.sell-content__btn-red
               出品する
-            .btn-default.btn-gray
+            .sell-content__btn-gray
               もどる
                   
