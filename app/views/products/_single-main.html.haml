@@ -10,9 +10,16 @@
               出品画像
               %span.sell__upload-box_form.form-require
                 必須
-            %p 最大10枚までアップロードできます         
+            %p 最大10枚までアップロードできます
+            .sell-upload.clearfix
+              .sell-upload__drop-box
+                %input{type:"file",name:"image1",style:"display:none;",multiple:true,id:"file"}
+                  %pre.visible-pc#btn
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+                  %i.fa.fa-camera{style:"display: none;"}
           .sell-content
-            .sell-content__name_form
+            .sell-content__name_form.form-group
               %label
                 商品名
                 %span.sell-content__name_require.form-require
