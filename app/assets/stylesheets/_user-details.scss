@@ -1,0 +1,97 @@
+.default-container {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  padding-top: 25px;
+}
+
+
+.users-detail {
+  background-color: white;
+  margin: auto;
+  max-width: 700px;
+  text-align: center;
+  height: 325px;
+  background-image: url("https://www.mercari.com/jp/assets/img/user/user_bg.jpg?52889117");
+  &__photo__image {
+    margin-top: 50px;
+    width: 190px;
+    height: 190px;
+    border-radius: 95px;
+    object-fit: cover;
+  }
+  &__score {
+    padding-top: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    span {
+      padding: 0 20px;
+    }
+  }
+  &__rating {
+    background-color: white;
+    border-bottom: solid 1.5px #EEEEEE;
+    margin-top: 10px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    &__list {
+      padding: 0 30px;
+      font-size: 14px;
+      font-weight: bold;
+      font-size: 25px;
+      span {
+        font-size: 15px;
+      }
+      .fas {
+        // 評価のアイコン
+        padding-right: 30px;
+      }
+    }
+  }
+  &__description {
+    background-color: white;
+    padding: 30px 50px 120px 50px;
+    height: 180px;
+  }
+}
+
+.item-social-media-box {
+  background-color: white;
+  text-align: center;
+  max-width: 700px;
+  height: 100px;
+  margin-top: 220px;
+  padding-bottom: 20px;
+  .fab {
+    margin: 5px;
+  }
+}
+
+// 高評価
+.fas.fa-laugh {
+  color: #EF5185;
+}
+// 中評価
+.fas.fa-meh{
+  color: #FBB046;
+
+}
+// 低評価
+.fas.fa-frown {
+  color: #6AB5D8;
+}
+
+
+.fab.fa-facebook {
+  color: #3b5998;
+
+}
+.fab.fa-twitter-square {
+  color: #00aced;
+}
+ .fab.fa-line{
+  color: #00c300;
+}
+
+

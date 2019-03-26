@@ -2,10 +2,13 @@
 @import "top-main-vidual";
 @import "app-vanner";
 @import "picup-container";
+@import 'font-awesome-sprockets';
 @import "font-awesome";
 @import "single-header";
 @import "single-main";
 @import "single-footer";
+@import "user-details";
+@import "items-box-container";
 * {
     background-repeat: no-repeat;
     margin: 0;
@@ -38,4 +41,8 @@ display: inline-block;
     text-transform: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0px;
+  padding: 0px;
 }
