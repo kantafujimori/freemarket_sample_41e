@@ -1,29 +1,4 @@
-@mixin clearfix {
-  clear: both;
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-}
-@mixin form-box {
-  float: right;
-  width: 400px;
-  margin: 0;
-}
-@mixin btn-default {
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  border: 1px solid transparent;
-  -webkit-transition: all ease-out .3s;
-  transition: all ease-out .3s;
-  cursor: pointer;
-  text-align: center;
-}
 .single-container {
-
   &__head {
     padding: 32px 16px;
     font-size: 22px;
@@ -58,11 +33,10 @@
     vertical-align: top;
   }
   .single-main {
-    background-color: #fff;
+ 
   }
   .sell-container {
-    width: 700px;
-    margin: 0 auto;
+    @include form-container;
     &__form {
       border-top: 1px solid #eee;
     }
