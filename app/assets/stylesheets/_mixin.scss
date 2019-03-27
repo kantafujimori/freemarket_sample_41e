@@ -6,6 +6,9 @@
       clear: both;
     }
   }
+  @mixin bold {
+    font-weight: 600;
+  }
   @mixin form-container {
     width: 700px;
     margin: 0 auto;

@@ -5,6 +5,13 @@
         購入を確定しますか？
       %section.buy-content
         .buy-content__inner
-          %h3.buy-content__item-image
-            = image_tag "https://static.mercdn.net/thumb/photos/m73258645677_1.jpg?1553664905"
-        
+          %h3.buy-content__item-image.buy-item
+            = image_tag "https://static.mercdn.net/thumb/photos/m82884941197_1.jpg?1541928495"
+            %p.buy-content__item-name.bold
+              Cisco ASA(5505) 、CD等の付属品アリ
+            = form_with url:root_path, class:"buy-content__form" ,local:true do |f|
+              .buy-content__price-ja.bold
+                ¥ 25,000
+                %span.buy-content__shipping-fee.bold
+                  送料込み
+                  

@@ -1,9 +1,17 @@
 .buy-container{
     @include form-container;
+    @include bold;
     .buy-content{    
         margin: 40px 0 0;
         padding: 24px 12.5% 0;
         border-top: 1px solid #f5f5f5;
+        .buy-content__form{
+            margin: 8px 0 0;
+            line-height: 1.5;
+        }
+        .buy-item{
+            text-align: center;
+        }
         &:first-of-type {
             margin: 0;
         }
@@ -13,11 +21,24 @@
         }
         &__item-image{
             font-size: 22px;
-            text-align: center;
             img{
                 width: 148px;
                 vertical-align: middle;
           }
-       }
+        }
+        &__price-ja{
+            margin: 16px 0 0;
+            font-size: 28px;
+        }
+        &__shipping-fee{
+                margin: 0 0 0 8px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            &__item-name{
+                margin: 8px 0 0;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
     }
-}

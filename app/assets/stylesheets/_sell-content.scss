@@ -85,7 +85,7 @@
         font-size: 14px;
       }
       .bold {
-        font-weight: 600;
+        @include bold;
       }
       .form-group {
         margin: 40px 0 0;
