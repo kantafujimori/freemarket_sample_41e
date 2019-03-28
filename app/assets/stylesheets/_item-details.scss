@@ -2,6 +2,33 @@
   padding: 24px 40px 40px;
   &__name {
     text-align: center;
+    margin-bottom: 16px;
+  }
+
+  &__main {
+    line-height: 0;
+    // img同士の縦にある隙間を消す
+    &__photo {
+      width: 300px;
+      min-height: 375px;
+      &__top {
+        &__image {
+          width: 300px;
+          height: 300px;
+          object-fit: cover;
+        }
+      }
+      &__sub {
+        letter-spacing: -0.4em;
+        // img同士の横にある隙間を消す
+        &__image {
+          width: 75px;
+        height: 75px;
+        object-fit: cover;
+        }
+      }
+    }
+
   }
 
   &__price {
