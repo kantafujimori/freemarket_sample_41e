@@ -1,0 +1,23 @@
+.social-media-box {
+  background-color: white;
+  text-align: center;
+  max-width: 700px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 120px;
+  padding-top: 40px;
+  .fab {
+    margin: 5px;
+  }
+}
+
+.fab.fa-facebook {
+  color: #3b5998;
+
+}
+.fab.fa-twitter-square {
+  color: #00aced;
+}
+ .fab.fa-line{
+  color: #00c300;
+}
