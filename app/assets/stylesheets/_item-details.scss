@@ -1,0 +1,26 @@
+.item-details {
+  padding: 24px 40px 40px;
+  &__name {
+    text-align: center;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    &__main {
+      font-size: 50px;
+      margin-right: 16px;
+    }
+    &__tax {
+      font-size: 10px;
+      margin-right: 3px;
+    }
+    &__shipping-fee {
+      font-size: 16px;
+    }
+  }
+  &__description {
+    font-size: 18px;
+  }
+}
