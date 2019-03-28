@@ -9,6 +9,15 @@
   @mixin bold {
     font-weight: 600;
   }
+  @mixin light-bold{
+    font-weight: 400;
+  }
+  @mixin btn-red {
+    margin: 40px 0 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+  }
   @mixin form-container {
     width: 700px;
     margin: 0 auto;

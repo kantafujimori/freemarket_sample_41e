@@ -35,6 +35,13 @@ button, input, select, textarea {
     font-family: inherit;
     font-style: inherit;
 }
+a {
+    color: #0099e8;
+    text-decoration: none;
+}
+ul, ol {
+    list-style: none;
+}
 i[class^='icon-'], i[class*='icon-'] {
 display: inline-block;
     font-family: 'icon-font';
