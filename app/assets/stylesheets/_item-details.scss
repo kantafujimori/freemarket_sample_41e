@@ -7,8 +7,11 @@
 
   &__main {
     line-height: 0;
+    display: inline-block;
+    width: 620px;
     // img同士の縦にある隙間を消す
     &__photo {
+      float: left;
       width: 300px;
       min-height: 375px;
       &__top {
@@ -23,18 +26,49 @@
         // img同士の横にある隙間を消す
         &__image {
           width: 75px;
-        height: 75px;
-        object-fit: cover;
+          height: 75px;
+          object-fit: cover;
         }
       }
     }
-
+    &__table {
+      float: right;
+      table {
+        min-height: 375px;
+        border-collapse: collapse;
+        width: 300px;
+        tr {
+          padding: 8px;
+          border: solid 1px #F5F5F5;
+        }
+        th {
+          font-weight: normal;
+          background-color: #FAFAFA;
+          text-align: left;
+          padding-left: 8px;
+        }
+        td {
+          padding: 8px;
+          border: solid 1px #F5F5F5;
+          width: 180px;
+          a {
+            color:#0199E8;
+            display: block;
+            text-decoration: none;
+          }
+          .category__magin-bottom {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
   }
 
   &__price {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    margin-top: 24px;
     &__main {
       font-size: 50px;
       margin-right: 16px;
@@ -49,5 +83,20 @@
   }
   &__description {
     font-size: 18px;
+    margin-top: 32px;
+  }
+  &__button {
+    margin-top: 16px;
+  }
+}
+
+.item-user-ratings {
+  display: flex;
+  margin-top: 16px;
+  font-size: 16px;
+  span {
+    margin: 8px 16px 0 0px;
+    font-size: 13px;
+    font-weight: 600;
   }
 }
