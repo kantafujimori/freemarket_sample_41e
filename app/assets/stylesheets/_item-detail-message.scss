@@ -1,0 +1,146 @@
+.item-detail-message {
+  background-color: white;
+  margin: auto;
+  margin-top: 10px;
+  max-width: 700px;
+
+  &__attention {
+    margin: auto;
+    padding: 8px;
+    width: calc(100% - 60px);
+    background-color: #FFF6DE;
+  }
+  &__input {
+    textarea {
+      text-align: center;
+      margin-top:10px;
+      margin-left: 24px;
+      height:100px;
+      width:650px;
+    }
+  }
+  &__btn {
+    button {
+      height: 48px;
+      width:650px;
+      background-color: #AAAAAA;
+      line-height: 48px;
+      margin-top: 8px;
+      margin-left: 24px;
+      color: white;
+      font-size: 16px;
+    }
+  }
+}
+
+.masseges {
+  padding: 24px;
+}
+
+.other-massege {
+  margin-bottom: 40px;
+  display: flex;
+  &__icon {
+    margin-right: 15px;
+    &__image {
+      width:40px;
+      height: 40px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    p {
+      font-size: 12px;
+      color: black;
+      background-color: #EEF0F4;
+      padding: 2px;
+      margin-top: 4px;
+    }
+  }
+  &__right {
+    &__name {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    &__box {
+      padding: 18px;
+      background-color: #EEF0F4;
+      border-radius: 10px;
+      &__text {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &__bottom {
+        margin-top: 10px;
+        color: #B3B4B4;
+        padding-bottom: 18px;
+        &__date {
+          float: left;
+        }
+        &__flag {
+          float: right;
+          .far {
+            color:#B3B4B4;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.my-massege {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  &__icon {
+    margin-left: 15px;
+    &__image {
+      width:40px;
+      height: 40px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    p {
+      font-size: 12px;
+      color: black;
+      background-color: #EEF0F4;
+      padding: 2px;
+      margin-top: 4px;
+    }
+  }
+  &__right {
+    &__name {
+      font-weight: bold;
+      margin-bottom: 4px;
+      float: right;
+      color:#EA352D;
+    }
+    &__box {
+      float: left;
+      padding: 18px;
+      background-color: #FBF0E6;
+      border-radius: 10px;
+      &__text {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &__bottom {
+        margin-top: 10px;
+        color: #B3B4B4;
+        padding-bottom: 18px;
+        &__date {
+          float: left;
+        }
+        &__dustbox {
+          float: right;
+          .fa {
+            color:#B3B4B4;
+          }
+        }
+      }
+    }
+  }
+}
+
