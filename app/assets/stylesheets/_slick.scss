@@ -114,27 +114,3 @@
     width: 31px;
     left: 3%;
 }
-// .slide-dots{
-//   text-align: center;
-//   li{
-//     display: inline-block;
-//     margin: 0 15px;
-//     button{
-//       position: relative;
-//       text-indent: -9999px;
-//       &:before{
-//         content: '◯';
-//         font-size: 15px;
-//         text-indent: 0px;
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//       }
-//     }
-//     &.slick-active{
-//       button:before{
-//         content: '●';
-//       }
-//     }
-//   }
-// }
