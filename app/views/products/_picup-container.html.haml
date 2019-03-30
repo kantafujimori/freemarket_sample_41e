@@ -4,74 +4,14 @@
   .picup-container__item
     %a{ :href => '', :class => 'picup-container__name'}
       レディース新着アイテム
-    .item-box
-      %img{ :src => 'mercari_icon.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
-    .item-box
-      %img{ :src => 'mercari-app.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
-    .item-box
-      %img{ :src => 'mercari_icon.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
-    .item-box
-      %img{ :src => 'mercari-app.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
+    - @products.each do |product|
+      = render partial: "item", locals: { product: product }
     %a{ :href => '', :class => 'picup-container__last'}
       すべての商品を見る
   .picup-container__item
     %a{ :href => '', :class => 'picup-container__name'}
       レディース新着アイテム
-    .item-box
-      %img{ :src => 'mercari_icon.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
-    .item-box
-      %img{ :src => 'mercari-app.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
-    .item-box
-      %img{ :src => 'mercari_icon.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
-    .item-box
-      %img{ :src => 'mercari-app.png', :class => 'item-box__image'}
-      .item-box__name
-        キルティンバッグ（未使用)aaaaaaaaaaaaaaaaaaa
-      .item-box__price
-        ¥1,000
-      .item-box__tax
-        (税込)
+    - @products.each do |product|
+      = render partial: "item", locals: { product: product }
     %a{ :href => '', :class => 'picup-container__last'}
       すべての商品を見る
