@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'products#index'
   devise_for :users
   resources :users, only: [:show]
-  get '/products/buy',to: 'products#buy_confirm'
-  resources :products
+  resources :products do
+    get :buy_confirm, on: :collection, as: :buy
+  end
 end
