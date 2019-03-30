@@ -11,7 +11,6 @@
   margin: auto;
   max-width: 700px;
   text-align: center;
-  height: 325px;
   background-image: url("https://www.mercari.com/jp/assets/img/user/user_bg.jpg?52889117");
   &__photo__image {
     margin-top: 50px;
@@ -51,22 +50,13 @@
   }
   &__description {
     background-color: white;
-    padding: 30px 50px 120px 50px;
-    height: 180px;
+    padding: 30px 50px 0px 50px;
+    min-height: 180px;
   }
 }
 
-.item-social-media-box {
-  background-color: white;
-  text-align: center;
-  max-width: 700px;
-  height: 100px;
-  margin-top: 220px;
-  padding-bottom: 20px;
-  .fab {
-    margin: 5px;
-  }
-}
+
+
 
 // 高評価
 .fas.fa-laugh {
@@ -83,15 +73,6 @@
 }
 
 
-.fab.fa-facebook {
-  color: #3b5998;
 
-}
-.fab.fa-twitter-square {
-  color: #00aced;
-}
- .fab.fa-line{
-  color: #00c300;
-}
 
 
