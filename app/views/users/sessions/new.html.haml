@@ -1,34 +1,34 @@
 .sign-in-page
   .sign-up-header
-    %img{ :src => '/mercari-sign-up.svg', :class => 'mercari-sign-up'}
+    = image_tag '/mercari-sign-up.svg', class: 'mercari-sign-up'
   .sign-in-main
     .sign-in-content
       .sign-in-content__registration
         アカウントをお持ちでない方はこちら
         .sign-in-content__a
-          %a{ :href => new_user_registration_path, :class => 'new-user-registration-a'}
+          = link_to "/users/signup", class: 'new-user-registration-a' do
             新規会員登録
       %hr
       .sign-in-content__sub
         .sign-in-content__main
           .single-content__facebook
-            %img{ :src => '/flogo-RGB-HEX-Blk-512.png', :class => "facebook-img"}
+            = image_tag '/flogo-RGB-HEX-Blk-512.png', class: "facebook-img"
             .single-content__two
               Facebookで登録
         .sign-in-content__main
           .single-content__google
-            %img{ :src => '/google.png', :class => "google-img"}
+            = image_tag '/google.png', class: "google-img"
             .single-content__three
               Googleで登録
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "sign-in-form"}) do |f|
         .field
           / = f.label :email
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " メールアドレス"
         .field
           / = f.label :password
           %br/
-          = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+          = f.password_field :password, autocomplete: "current-password", placeholder: " パスワード"
         / - if devise_mapping.rememberable?
         /   .field
         /     = f.check_box :remember_me
@@ -39,16 +39,16 @@
       = render "users/shared/links"
   .sign-up-footer
     %ul.sign-up-footer__ul
-      %a{ :href => "", :class => "sign-up-footer__a"}
+      =link_to "", class: "sign-up-footer__a" do
         %li.sign-up-footer__li
           プライバシーポリシー
-      %a{ :href => "", :class => "sign-up-footer__a"}
+      = link_to "", class: "sign-up-footer__a" do
         %li.sign-up-footer__li
           メルカリ利用規約
-      %a{ :href => "", :class => "sign-up-footer__a"}
+      = link_to "", class: "sign-up-footer__a" do
         %li.sign-up-footer__li
           特定商取引に関する表記
     .sign-up-footer__img
-      %img{ :src => "/mercari-sign-up-gray.svg", :class => "mercari-sign-up-gray"}
+      = image_tag "/mercari-sign-up-gray.svg", class: "mercari-sign-up-gray"
     .sign-up-footer__last
       © 2019 Mercari

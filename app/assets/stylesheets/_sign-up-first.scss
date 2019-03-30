@@ -1,6 +1,6 @@
 .sign-up-page{
   background-color: #EEEEEE;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 .sign-up-header{
@@ -96,7 +96,10 @@ hr{
   width: 80px;
 }
 .sign-up-footer{
-  margin-top: 37px;
+  margin-top: -1%;
+  padding-top: 5%;
+  background-color: #EEEEEE;
+  height: 100%;
   &__a{
     text-decoration: none;
     color: black;

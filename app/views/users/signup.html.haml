@@ -1,0 +1,40 @@
+.sign-up-page
+  .sign-up-header
+    = image_tag '/mercari-sign-up.svg', class: 'mercari-sign-up'
+  .single-main
+    .single-content
+      .single-content__header
+        新規会員登録
+      %hr
+      .single-content__message
+        .single-content__mail
+          %i{ class: "fas fa-envelope fa-2x"}
+          = link_to '/users/sign_up', class: "mercari-registration" do
+            .single-content__one
+              メールアドレスで登録
+      .single-content__message
+        .single-content__facebook
+          = image_tag '/flogo-RGB-HEX-Blk-512.png', class: "facebook-img"
+          .single-content__two
+            Facebookで登録
+      .single-content__message
+        .single-content__google
+          = image_tag '/google.png', class: "google-img"
+          .single-content__three
+            Googleで登録
+  .sign-up-footer
+    %ul.sign-up-footer__ul
+      = link_to "", class: "sign-up-footer__a" do
+        %li.sign-up-footer__li
+          プライバシーポリシー
+      = link_to "", class: "sign-up-footer__a" do
+        %li.sign-up-footer__li
+          メルカリ利用規約
+      = link_to  "", class: "sign-up-footer__a" do
+        %li.sign-up-footer__li
+          特定商取引に関する表記
+    .sign-up-footer__img
+      = image_tag  "/mercari-sign-up-gray.svg", class: "mercari-sign-up-gray"
+    .sign-up-footer__last
+      © 2019 Mercari
+
