@@ -55,9 +55,18 @@
         &:first-of-type {
             margin: 0;
         }
+        &:last-of-type {
+          padding: 40px 12.5%;
+        }
         &__inner{
             max-width: 320px;
             margin: 0 auto;
+          figure{
+            img{
+              width: 49px;
+              height: 15px;
+            }
+          }
         }
         &__item-image{
             font-size: 22px;
