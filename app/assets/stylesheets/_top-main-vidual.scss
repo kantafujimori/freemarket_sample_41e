@@ -31,6 +31,9 @@
     height: 390px;
     margin: 0 auto;
   }
+  &__li {
+    display: inline-block;
+  }
 }
 h2.top-main-vidual-h{
   font-weight: bold;
