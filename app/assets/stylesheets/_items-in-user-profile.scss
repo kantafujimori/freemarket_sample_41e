@@ -1,0 +1,20 @@
+.items-in-user-profile {
+  margin: auto;
+  margin-top: 10px;
+  max-width: 700px;
+  &__category {
+    margin-top: 40px;
+    &__name {
+      display: block;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+      color: #3399FF;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+
+
+
