@@ -109,6 +109,11 @@
       }
     }
   }
+  &__btn-red {
+    @include btn-red;
+    @include btn-default;
+    margin-top: 16px;
+  }
 }
 
 .item-user-ratings {
