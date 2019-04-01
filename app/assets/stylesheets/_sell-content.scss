@@ -31,6 +31,7 @@
     color: #fff;
     font-size: 12px;
     vertical-align: top;
+    font-weight: 600;
   }
   .single-main {
  
@@ -89,10 +90,6 @@
       }
       .form-group {
         margin: 40px 0 0;
-        label {
-          font-weight: 600;
-          display: inline-block;
-        }
         &:first-child {
           margin: 0;
         }
