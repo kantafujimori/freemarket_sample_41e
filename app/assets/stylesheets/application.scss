@@ -1,12 +1,24 @@
+@import "slick-theme";
+@import "slick";
+@import "mixin";
+@import "common";
 @import "index";
 @import "top-main-vidual";
 @import "app-vanner";
 @import "picup-container";
+@import 'font-awesome-sprockets';
 @import "font-awesome";
 @import "sign-up-first";
 @import "sign-in-first";
 @import "sign-up-second";
-* {
-    margin: 0px;
-    padding: 0px;
-}
+@import "single-header";
+@import "sell-content";
+@import "buy-content-confirm";
+@import "single-footer";
+@import "user-details";
+@import "items-box-container";
+@import "social-media-box";
+@import "item-details";
+@import "item-detail-message";
+@import "nav-item-link";
+@import "items-in-user-profile";
