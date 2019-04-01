@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :products do
     get :buy_confirm, on: :collection, as: :buy
   end
+  resources :sells
 end

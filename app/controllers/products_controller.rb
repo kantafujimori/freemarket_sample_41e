@@ -7,9 +7,6 @@ class ProductsController < ApplicationController
     @products = Product.order("created_at ASC").limit(3)
   end
 
-  def new
-
-  end
   def buy_confirm
 
   end
