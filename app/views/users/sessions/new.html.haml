@@ -1,6 +1,5 @@
-.sign-in-page
-  .sign-up-header
-    = image_tag '/mercari-sign-up.svg', class: 'mercari-sign-up'
+.single-container
+  = render 'products/single-header'
   .sign-in-main
     .sign-in-content
       .sign-in-content__registration
@@ -22,33 +21,13 @@
               Googleで登録
       = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "sign-in-form"}) do |f|
         .field
-          / = f.label :email
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " メールアドレス"
         .field
-          / = f.label :password
           %br/
           = f.password_field :password, autocomplete: "current-password", placeholder: " パスワード"
-        / - if devise_mapping.rememberable?
-        /   .field
-        /     = f.check_box :remember_me
-        /     = f.label :remember_me
         = recaptcha_tags
         .actions
           = f.submit "ログイン", :class => "submit_button"
       = render "users/shared/links"
-  .sign-up-footer
-    %ul.sign-up-footer__ul
-      =link_to "", class: "sign-up-footer__a" do
-        %li.sign-up-footer__li
-          プライバシーポリシー
-      = link_to "", class: "sign-up-footer__a" do
-        %li.sign-up-footer__li
-          メルカリ利用規約
-      = link_to "", class: "sign-up-footer__a" do
-        %li.sign-up-footer__li
-          特定商取引に関する表記
-    .sign-up-footer__img
-      = image_tag "/mercari-sign-up-gray.svg", class: "mercari-sign-up-gray"
-    .sign-up-footer__last
-      © 2019 Mercari
+  = render 'products/single-footer'

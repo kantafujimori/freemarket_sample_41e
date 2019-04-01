@@ -1,16 +1,3 @@
-.sign-up-page{
-  background-color: #EEEEEE;
-  height: 100%;
-  width: 100%;
-}
-.sign-up-header{
-  height: 128px;
-  text-align: center;
-}
-.mercari-sign-up{
-  height: 149px;
-  width: 185px;
-}
 .single-main{
   width: 100%;
 }
@@ -89,36 +76,5 @@ hr{
     position: absolute;
     right: 37%;
     bottom: 30%;
-  }
-}
-.mercari-sign-up-gray{
-  height: 65px;
-  width: 80px;
-}
-.sign-up-footer{
-  margin-top: -1%;
-  padding-top: 5%;
-  background-color: #EEEEEE;
-  height: 100%;
-  &__a{
-    text-decoration: none;
-    color: black;
-  }
-  &__ul{
-    text-align: center;
-    font-size: 13px;
-  }
-  &__li{
-    display: inline;
-    margin-right: 13px;
-  }
-  &__img{
-    text-align: center;
-    margin-top: 40px;
-  }
-  &__last{
-    text-align: center;
-    font-size: 8px;
-    margin-bottom: 60px;
   }
 }
