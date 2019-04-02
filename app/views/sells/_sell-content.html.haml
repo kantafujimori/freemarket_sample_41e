@@ -50,30 +50,43 @@
           %h3.sell-content__delivery-head.sub-head 配送について
           = link_to "?","https://mercari.com/jp/help_center/article/68/",target:"_blank",class:"form-question"
           .sell-content__delivery.form-box
-            .sell-content__delivery_form.form-group
-              = f.label "配送料の負担"
-              %span.sell-content__delivery_require.form-require
-                必須
-            .sell-content__select-wrap
-              = f.fields_for :delivery_fee_owners do |fin|
-                = fin.collection_select :delivery_fee_owner,DeliveryFeeOwner.all,:id, :delivery_fee_owner, {prompt: "---"},{class:"sell-content__select-default"}
-                %i.fa.fa-angle-down.fa-2x
-            .sell-content__delivery_form.form-group
-              %label
-                発送元の地域
+            .sell-content__delivery_form_wrap.form-group
+              .sell-content__delivery_form
+                = f.label "配送料の負担"
                 %span.sell-content__delivery_require.form-require
                   必須
               .sell-content__select-wrap
-                %select.sell-content__select-default
-                %i.fa.fa-angle-down.fa-2x
-            .sell-content__delivery_form.form-group
-              %label
-                発送までの日数
-                %span.form-require
+                = f.fields_for :delivery_fee_owners do |fee|
+                  = fee.collection_select :delivery_fee_owner, DeliveryFeeOwner.all,:id, :delivery_fee_owner, {prompt: "---"},{class:"sell-content__select-default",id:"delivery_fee_owner"}
+                  %i.fa.fa-angle-down.fa-2x
+            //jqueryで:delivery_fee_ownersの値によって表示するセレクトボックスを変動させる。
+            .sell-content__delivery_form_wrap.form-group{style:"display:none;"}
+              .sell-content__delivery_form
+                = f.label "配送の方法"
+                %span.sell-content__delivery_require.form-require
                   必須
               .sell-content__select-wrap
-                %select.sell-content__select-default
-                %i.fa.fa-angle-down.fa-2x
+                = f.fields_for :shipping_methods do |method|
+                  = method.collection_select :shipping_method, ShippingMethod.all, :id, :shipping_method,{prompt: "---"},{class:"sell-content__select-default",id:"shipping_method"}
+                  %i.fa.fa-angle-down.fa-2x
+            .sell-content__delivery_form_wrap.form-group
+              .sell-content__delivery_form
+                %label
+                  発送元の地域
+                  %span.sell-content__delivery_require.form-require
+                    必須
+                .sell-content__select-wrap
+                  %select.sell-content__select-default
+                  %i.fa.fa-angle-down.fa-2x
+            .sell-content__delivery_form_wrap.form-group
+              .sell-content__delivery_form
+                %label
+                  発送までの日数
+                  %span.form-require
+                    必須
+                .sell-content__select-wrap
+                  %select.sell-content__select-default
+                  %i.fa.fa-angle-down.fa-2x
         .sell-content.clearfix
           %h3.sell-content__price-head.sub-head 販売価格(300〜9,999,999)
           = link_to "?","https://mercari.com/jp/help_center/article/68/",target:"_blank",class:"form-question"
