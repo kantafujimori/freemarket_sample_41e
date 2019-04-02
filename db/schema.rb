@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_31_085226) do
+ActiveRecord::Schema.define(version: 2019_04_02_031903) do
+
+  create_table "delivery_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "delivery_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "delivery_fee_owners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "delivery_fee_owner", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
@@ -27,7 +39,15 @@ ActiveRecord::Schema.define(version: 2019_03_31_085226) do
     t.integer "price"
     t.text "info"
     t.integer "status"
+    t.bigint "shipping_method_id"
     t.index ["name"], name: "index_products_on_name"
+    t.index ["shipping_method_id"], name: "index_products_on_shipping_method_id"
+  end
+
+  create_table "shipping_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shipping_method", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -43,4 +63,5 @@ ActiveRecord::Schema.define(version: 2019_03_31_085226) do
   end
 
   add_foreign_key "images", "products"
+  add_foreign_key "products", "shipping_methods"
 end
