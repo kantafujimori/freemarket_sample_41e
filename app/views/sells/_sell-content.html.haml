@@ -54,8 +54,9 @@
               = f.label "配送料の負担"
               %span.sell-content__delivery_require.form-require
                 必須
-              .sell-content__select-wrap
-                %select.sell-content__select-default
+            .sell-content__select-wrap
+              = f.fields_for :delivery_fee_owners do |fin|
+                = fin.collection_select :delivery_fee_owner,DeliveryFeeOwner.all,:id, :delivery_fee_owner, {prompt: "---"},{class:"sell-content__select-default"}
                 %i.fa.fa-angle-down.fa-2x
             .sell-content__delivery_form.form-group
               %label
