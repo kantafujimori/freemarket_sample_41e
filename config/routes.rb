@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get :signup
     end
   end
-  resources :products do
-    get :buy_confirm, on: :collection, as: :buy
-  end
+  resources :products
+  resources :sells
+  resources :buys
 end
