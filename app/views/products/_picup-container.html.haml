@@ -2,16 +2,16 @@
   %h2.picup-container-header
     ピックアップカテゴリー
   .picup-container__item
-    %a{ :href => '', :class => 'picup-container__name'}
+    = link_to '', class: 'picup-container__name' do
       レディース新着アイテム
     - @products.each do |product|
       = render partial: "item", locals: { product: product }
-    %a{ :href => '', :class => 'picup-container__last'}
+    = link_to '', class: 'picup-container__last' do
       すべての商品を見る
   .picup-container__item
-    %a{ :href => '', :class => 'picup-container__name'}
+    = link_to '', class: 'picup-container__name' do
       レディース新着アイテム
     - @products.each do |product|
       = render partial: "item", locals: { product: product }
-    %a{ :href => '', :class => 'picup-container__last'}
+    = link_to '', class: 'picup-container__last' do
       すべての商品を見る

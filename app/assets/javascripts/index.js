@@ -2,15 +2,9 @@ $(function() {
   $('.slick').slick({
     autoplay:true,
     autoplaySpeed: 3000,
-    // // arrows: false,
     dots: true,
-    prevArrow:'<div class="slide-prev">PREV</div>',
-    nextArrow:'<div class="slide-next">NEXT</div>',
+    arrows: true,
+    prevArrow: '<img src="/slick-prev.png" class="slide-arrow prev-arrow">',
+    nextArrow:'<img src="/slick-next.png" class="slide-arrow prev-next">',
   });
-  // $('.slick-next').on('click', function () {
-  //       slick.slickNext();
-  //   });
-  //   $('.slick-prev').on('click', function () {
-  //       slick.slickPrev();
-  //   });
 });
