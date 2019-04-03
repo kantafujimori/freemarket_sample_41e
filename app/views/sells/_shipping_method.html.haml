@@ -1,0 +1,2 @@
+= fields_for @shipping_method do |method|
+  = method.collection_select :shipping_method, ShippingMethod.where(delivery_fee_owner_id: delivery_fee_owner_id), :id, :shipping_method,{prompt: "---"},{class:"sell-content__select-default",id:"shipping_method"}
