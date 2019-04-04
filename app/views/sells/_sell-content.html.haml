@@ -12,7 +12,7 @@
           %p 最大10枚までアップロードできます
           .sell-upload.clearfix
             .sell-upload__drop-box
-              %input{type:"file",name:"image1",style:"display:none;",multiple:true,id:"file"}
+              //%input{type:"file",name:"image1",style:"display:none;",multiple:true,id:"file"}
               %pre.visible-pc#btn
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
@@ -56,9 +56,8 @@
                 %span.sell-content__delivery_require.form-require
                   必須
               .sell-content__select-wrap
-                = f.fields_for :delivery_fee_owners do |fee|
-                  = fee.collection_select :delivery_fee_owner, DeliveryFeeOwner.all,:id, :delivery_fee_owner, {prompt: "---"},{class:"sell-content__select-default",id:"delivery_fee_owner"}
-                  %i.fa.fa-angle-down.fa-2x
+                = f.collection_select :delivery_fee_owner_id, DeliveryFeeOwner.all,:id, :delivery_fee_owner, {prompt: "---"},{class:"sell-content__select-default",id:"delivery_fee_owner"}
+                %i.fa.fa-angle-down.fa-2x
             //jqueryで:delivery_fee_ownersの値によって表示するセレクトボックスを変動させる。
             .sell-content__delivery_form_wrap.form-group
               .sell-content__delivery_form
@@ -66,7 +65,7 @@
                 %span.sell-content__delivery_require.form-require
                   必須
               .sell-content__select-wrap.shipping-method
-                = render partial: 'shipping_method',locals: {delivery_fee_owner_id: DeliveryFeeOwner.first.id}
+                = render partial: 'shipping_method',locals: {f:f,delivery_fee_owner_id: DeliveryFeeOwner.first.id}
                 %i.fa.fa-angle-down.fa-2x
             .sell-content__delivery_form_wrap.form-group
               .sell-content__delivery_form

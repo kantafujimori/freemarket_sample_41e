@@ -10,8 +10,7 @@ class SellsController < ApplicationController
 
   def create
     @sell = Product.new(sell_params)
-    @shipping_method = ShippingMethod.new(shipping_method_params)
-    if @sell && @shipping_method.save
+    if @sell.save
       redirect_to sell_path(@sell)
     else
       redirect_to root_path
@@ -25,9 +24,9 @@ class SellsController < ApplicationController
   private
 
   def sell_params
-    params.require(:product).permit(:name, :info, :price, :status,)
+    params.require(:product).permit(:delivery_fee_owner_id, :shipping_method_id, :name, :info, :price, :status)
   end
   def shipping_method_params
-    params.require(:product).permit(:shipping_method_id)
+    params.permit(:shipping_method)
   end
 end
