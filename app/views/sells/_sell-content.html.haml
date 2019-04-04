@@ -59,7 +59,7 @@
                 = f.collection_select :delivery_fee_owner_id, DeliveryFeeOwner.all,:id, :delivery_fee_owner, {prompt: "---"},{class:"sell-content__select-default",id:"delivery_fee_owner"}
                 %i.fa.fa-angle-down.fa-2x
             //jqueryで:delivery_fee_ownersの値によって表示するセレクトボックスを変動させる。
-            .sell-content__delivery_form_wrap.form-group
+            .sell-content__delivery_form_wrap.form-group#shipping-method_wrap
               .sell-content__delivery_form
                 = f.label "配送の方法"
                 %span.sell-content__delivery_require.form-require
