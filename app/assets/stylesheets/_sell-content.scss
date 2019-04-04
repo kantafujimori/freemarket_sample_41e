@@ -55,8 +55,11 @@
     .sell-content {
       padding: 40px;
       border-top: 1px solid #eee;
-      #shipping-method_wrap{
-        display:none;
+      .display-none{
+        display: none;
+      }
+      .display-block{
+        display:block;
       }
       .input-default {
         margin: 8px 0 0;
