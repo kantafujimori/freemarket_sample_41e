@@ -2,11 +2,9 @@ $(document).on('turbolinks:load', function() {
     $('#delivery_fee_owner').on("change",function() {
         var noselect = $('#delivery_fee_owner option:selected').val();
         if (noselect == 1 || noselect == 2){
-            $('#shipping_method').removeClass('display-none');
-            $('#shipping_method').addClass('display-block');
+            $('#shipping_method').removeClass('display-none').addClass('display-block');
         }else{
-            $('#shipping_method').removeClass('display-block');
-            $('#shipping_method').addClass('display-none');
+            $('#shipping_method').removeClass('display-block').addClass('display-none');
         }
         $.ajax({
             type: 'GET',
