@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_092212) do
+ActiveRecord::Schema.define(version: 2019_04_04_072749) do
 
   create_table "delivery_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "delivery_date", null: false
@@ -40,7 +40,10 @@ ActiveRecord::Schema.define(version: 2019_04_03_092212) do
     t.text "info"
     t.integer "status"
     t.bigint "shipping_method_id"
-    t.integer "delivery_fee_owner_id"
+    t.bigint "delivery_fee_owner_id"
+    t.bigint "delivery_date_id"
+    t.index ["delivery_date_id"], name: "index_products_on_delivery_date_id"
+    t.index ["delivery_fee_owner_id"], name: "index_products_on_delivery_fee_owner_id"
     t.index ["name"], name: "index_products_on_name"
     t.index ["shipping_method_id"], name: "index_products_on_shipping_method_id"
   end
@@ -65,5 +68,7 @@ ActiveRecord::Schema.define(version: 2019_04_03_092212) do
   end
 
   add_foreign_key "images", "products"
+  add_foreign_key "products", "delivery_dates"
+  add_foreign_key "products", "delivery_fee_owners"
   add_foreign_key "products", "shipping_methods"
 end

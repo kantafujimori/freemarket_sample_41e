@@ -25,6 +25,6 @@ class SellsController < ApplicationController
   private
 
   def sell_params
-    params.require(:product).permit(:delivery_fee_owner_id, :shipping_method_id, :name, :info, :price, :status)
+    params.require(:product).permit(:delivery_fee_owner_id, :shipping_method_id,:delivery_date_id, :name, :info, :price, :status)
   end
 end
