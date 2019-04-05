@@ -21,7 +21,6 @@ $(document).on('turbolinks:load', function() {
         var price = $('input[name="product[price]"]').val();
         var charge = price * 0.1;
         var SalesProfit = price - charge;
-        console.log(SalesProfit);
         $('#charge').text("").html(`¥${charge}`);
         $('#profit').text("").html(`¥${SalesProfit}`);
     })
