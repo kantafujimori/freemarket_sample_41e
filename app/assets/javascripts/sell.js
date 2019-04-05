@@ -17,4 +17,13 @@ $(document).on('turbolinks:load', function() {
         $('.shipping-method').html(data);
         })
     });
+    $('#product_price').on('change',function () {
+        var price = $('input[name="product[price]"]').val();
+        var charge = price * 0.1;
+        var SalesProfit = price - charge;
+        console.log(SalesProfit);
+        $('#charge').text("").html(`¥${charge}`);
+        $('#profit').text("").html(`¥${SalesProfit}`);
+    })
+
 });

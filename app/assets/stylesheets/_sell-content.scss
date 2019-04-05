@@ -147,6 +147,9 @@
       }
       &__price {
         @include form-box;
+        #profit{
+        font-size: 34px;
+        }
       }
       &__price-list {
         list-style: none;
