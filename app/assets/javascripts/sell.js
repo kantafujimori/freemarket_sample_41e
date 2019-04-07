@@ -23,6 +23,8 @@ $(document).on('turbolinks:load', function() {
         var SalesProfit = price - charge;
         $('#charge').text("").html(`¥${charge}`);
         $('#profit').text("").html(`¥${SalesProfit}`);
-    })
-
+    });
+    $('.click').on('click',function () {
+        $('#file').get(0).click();
+    });
 });
