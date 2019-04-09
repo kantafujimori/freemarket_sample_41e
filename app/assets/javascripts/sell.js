@@ -42,14 +42,15 @@ $(document).on('turbolinks:load', function() {
       list.append(html);
     }
     function buildHtml2(file){
-      var preview2 = $('.sell-upload__items2');
+      var itemcontainer = $('.sell-upload__items-container');
+      var preview = $('.sell-upload__items');
       var list = $('#list2');
       var html = `<li class="sell-upload__item">
                   <figure class="sell-upload__figure">
                   <img class="file2" src="${file}">
                   </figure>
                   </li>`;
-      preview2.append(html);
+      list.append(html);
     }
     $('#file').on('change',function () {
       if (!this.files.length) {
@@ -66,18 +67,23 @@ $(document).on('turbolinks:load', function() {
             var src = e.target.result;
             var imgCount= $('.sell-upload__item').length;
             var dropbox = $('.sell-upload__drop-box');
-            var itemcontainer = $('.sell-upload__items-container');
-          if (imgCount <= 4){
-            while(imgCount >= 4) {
-              dropbox.addClass(
-                function (index) {
-                  return 'have-item' + -1;
-                })
-            }
-            //dropbox.removeClass('have-item-0').addClass('have-item-1');
-            buildHtml(src);
-          }else{
-            buildHtml2(src);
+            //var i = 0;
+              dropbox.each(function () {
+                var count = 1 + imgCount;
+                var count2 = 4 - imgCount;
+                if (imgCount <= 4) {
+                  $(this).removeClass('have-item-'+ imgCount).addClass('have-item-' + count);
+                  buildHtml(src);
+                }
+                else if(imgCount >= 4) {
+                  console.log(count2);
+                  console.log(imgCount);
+                  $(this).removeClass('have-item-' + imgCount).addClass('have-item' + count2);
+                  buildHtml2(src);
+                }
+                });
+        if (imgCount > 8){
+            dropbox.remove();
           }
         };
         reader.readAsDataURL(file);
