@@ -282,11 +282,12 @@
     &__item{
       position: relative;
       display: inline-block;
-        width: 113px;
-      margin: 0 0px 10px 10px;
+      width: 113px;
+      margin: 0 0 10px 10px;
       border: 1px solid #eee;
       vertical-align: top;
       background: #f5f5f5;
+      min-height: 162px;
       &:first-child{
         margin-left: 0;
         width: 116px;
@@ -298,12 +299,27 @@
       width: 100%;
       height: 0;
       padding: 0 0 100%;
+      text-align: center;
       img{
+        vertical-align: middle;
         position: static;
         height: 140px;
         -webkit-transform: none;
         transform: none;
       }
+    }
+    &__button{
+      font-size: 14px;
+      a:last-child {
+        border-left: 1px solid #eee;
+      }
+    }
+    &__edit{
+      display: inline-block;
+      width: 55%;
+      background: #f5f5f5;
+      line-height: 44px;
+      text-align: center;
     }
   }
 }

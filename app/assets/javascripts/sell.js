@@ -31,27 +31,6 @@ $(document).on('turbolinks:load', function() {
         $('#file').get(0).click();
     });
     //画像プレビュー
-    function buildHtml(file) {
-    var preview = $('.sell-upload__items');
-    var list = $('#list1');
-    var html = `<li class="sell-upload__item">
-                  <figure class="sell-upload__figure">
-                  <img class="file1" src="${file}">
-                  </figure>
-                  </li>`;
-      list.append(html);
-    }
-    function buildHtml2(file){
-      var itemcontainer = $('.sell-upload__items-container');
-      var preview = $('.sell-upload__items');
-      var list = $('#list2');
-      var html = `<li class="sell-upload__item">
-                  <figure class="sell-upload__figure">
-                  <img class="file2" src="${file}">
-                  </figure>
-                  </li>`;
-      list.append(html);
-    }
     $('#file').on('change',function () {
       if (!this.files.length) {
         alert("画像ファイルを指定してください。");
@@ -64,26 +43,60 @@ $(document).on('turbolinks:load', function() {
         var reader = new FileReader();
       }
         reader.onload = function (e) {
-            var src = e.target.result;
+            var imgsrc = e.target.result;
             var imgCount= $('.sell-upload__item').length;
             var dropbox = $('.sell-upload__drop-box');
-            //var i = 0;
-              dropbox.each(function () {
+              dropbox.each(function (index) {
                 var count = 1 + imgCount;
                 var count2 = 4 - imgCount;
                 if (imgCount <= 4) {
-                  $(this).removeClass('have-item-'+ imgCount).addClass('have-item-' + count);
-                  buildHtml(src);
+                  $(this).removeClass(function (index,className) {
+                    var removeClassName = 'have-item';
+                    reg = new RegExp("\\b" + removeClassName +"\\S+",'g');
+                    return (className.match(reg) || []).join(' ');
+                  });
+                  $(this).addClass('have-item-' + count);
+                  topImage(imgsrc);
                 }
                 else if(imgCount >= 4) {
-                  console.log(count2);
-                  console.log(imgCount);
-                  $(this).removeClass('have-item-' + imgCount).addClass('have-item' + count2);
-                  buildHtml2(src);
+                  console.log(index);
+                  $(this).removeClass(function (index,className) {
+                    var removeClassName = 'have-item';
+                    reg = new RegExp("\\b" + removeClassName +"\\S+",'g');
+                    return (className.match(reg) || []).join(' ');
+                  });
+                  $(this).addClass('have-item' + count2);
+                  bottomImage(imgsrc);
                 }
                 });
         if (imgCount > 8){
             dropbox.remove();
+          }
+          function topImage(file) {
+            var list = $('#list1');
+            var html = `<li class="sell-upload__item">
+                  <figure class="sell-upload__figure">
+                  <img class="file1" src="${file}">
+                  </figure>
+                  <div class="sell-upload__button">
+                  <a href="" class="sell-upload__edit">編集</a>
+                  <a href="">削除</a>
+                  </div>
+                  </li>`;
+            list.append(html);
+          }
+          function bottomImage(file){
+            var list = $('#list2');
+            var html = `<li class="sell-upload__item">
+                  <figure class="sell-upload__figure">
+                  <img class="file2" src="${file}">
+                  </figure>
+                  <div class="sell-upload__button">
+                  <a href="" class="sell-upload__edit">編集</a>
+                  <a href="">削除</a>
+                  </div>
+                  </li>`;
+            list.append(html);
           }
         };
         reader.readAsDataURL(file);
