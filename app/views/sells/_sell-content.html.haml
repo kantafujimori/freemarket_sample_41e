@@ -11,12 +11,18 @@
               必須
           %p 最大10枚までアップロードできます
           .sell-upload.clearfix
-            .sell-upload__drop-box
-              //%input{type:"file",name:"image1",style:"display:none;",multiple:true,id:"file"}
+            .sell-upload__items-container
+              .sell-upload__items
+                %ul#list1
+              .sell-upload__items2
+                %ul#list2
+            .sell-upload__drop-box.have-item-0#file-upload
+              = fields_for :images do |f|
+                = f.file_field :image,multiple:true,id:'file',style:"display: none;"
               %pre.visible-pc#btn
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
-              %i.fa.fa-camera{style:"display: none;"}
+                %i.fa.fa-camera{style:"display: none;"}
         .sell-content
           .sell-content__name_form.form-group
             = f.label "商品名"
