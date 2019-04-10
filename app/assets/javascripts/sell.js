@@ -59,7 +59,6 @@ $(document).on('turbolinks:load', function() {
                   topImage(imgsrc);
                 }
                 else if(imgCount >= 4) {
-                  console.log(index);
                   $(this).removeClass(function (index,className) {
                     var removeClassName = 'have-item';
                     reg = new RegExp("\\b" + removeClassName +"\\S+",'g');
@@ -100,6 +99,5 @@ $(document).on('turbolinks:load', function() {
           }
         };
         reader.readAsDataURL(file);
-      $(this).val('');
     });
   });

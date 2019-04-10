@@ -10,7 +10,7 @@ class SellsController < ApplicationController
 
   def create
     @sell = Product.new(sell_params)
-    if @sell.save
+    if @sell.save!
       redirect_to sell_path(@sell)
     else
       redirect_to root_path
@@ -25,6 +25,7 @@ class SellsController < ApplicationController
   private
 
   def sell_params
-    params.require(:product).permit(:delivery_fee_owner_id, :shipping_method_id,:delivery_date_id, :name, :info, :price, :status)
+    params.require(:product).permit(:delivery_fee_owner_id, :shipping_method_id,:delivery_date_id, :name, :info, :price, :status,
+    images_attributes:[ :product_id,image: []])
   end
 end

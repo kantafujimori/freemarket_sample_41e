@@ -17,7 +17,7 @@
               .sell-upload__items
                 %ul#list2
             .sell-upload__drop-box.have-item-0#file-upload
-              = fields_for :images do |f|
+              = f.fields_for :images, @sell.images.build do |f|
                 = f.file_field :image,multiple:true,id:'file',style:"display: none;"
               %pre.visible-pc#btn
                 ドラッグアンドドロップ
