@@ -100,5 +100,6 @@ $(document).on('turbolinks:load', function() {
           }
         };
         reader.readAsDataURL(file);
+      $(this).val('');
     });
   });
