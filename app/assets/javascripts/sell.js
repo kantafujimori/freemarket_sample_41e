@@ -23,15 +23,26 @@ $(document).on('turbolinks:load', function() {
         var price = $('input[name="product[price]"]').val();
         var charge = price * 0.1;
         var SalesProfit = price - charge;
-        $('#charge').text("").html(`¥${charge}`);
-        $('#profit').text("").html(`¥${SalesProfit}`);
+        if (price >= 300){
+        $('#charge').text("").html(`¥${orgFloor(charge,1)}`);
+        $('#profit').text("").html(`¥${orgCeil(SalesProfit,1)}`);
+        }
+        else{
+          $('#charge , #profit').text('-');
+        }
+        function orgFloor(value,base) {
+        return Math.floor(value * base) / base;
+        }
+        function orgCeil(value,base) {
+        return Math.ceil(value * base) / base;
+        }
     });
     //クリックしてアップロード
     $('#file-upload').on('click',function () {
         $('#file').get(0).click();
     });
     //画像プレビュー
-    $('#file').on('change',function () {
+    $('#file').on('change',function (e) {
       if (!this.files.length) {
         alert("画像ファイルを指定してください。");
         return false;
@@ -41,6 +52,7 @@ $(document).on('turbolinks:load', function() {
       for ( var i = 0; i < len; i++ ) {
         var file = files[i];
         var reader = new FileReader();
+
       }
         reader.onload = function (e) {
             var imgsrc = e.target.result;
@@ -87,5 +99,7 @@ $(document).on('turbolinks:load', function() {
           }
         };
         reader.readAsDataURL(file);
+      //e.target.value = '';
+      //console.log(e.target.value);
     });
   });
