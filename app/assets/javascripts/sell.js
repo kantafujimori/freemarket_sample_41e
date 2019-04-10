@@ -46,9 +46,13 @@ $(document).on('turbolinks:load', function() {
             var imgsrc = e.target.result;
             var imgCount= $('.sell-upload__item').length;
             var dropbox = $('.sell-upload__drop-box');
-              dropbox.each(function (index) {
+            if (imgCount > 8){
+              dropbox.remove();
+            }
+              dropbox.each(function () {
                 var count = 1 + imgCount;
                 var count2 = 4 - imgCount;
+                var html = appendImage(imgsrc);
                 if (imgCount <= 4) {
                   $(this).removeClass(function (index,className) {
                     var removeClassName = 'have-item';
@@ -56,7 +60,7 @@ $(document).on('turbolinks:load', function() {
                     return (className.match(reg) || []).join(' ');
                   });
                   $(this).addClass('have-item-' + count);
-                  topImage(imgsrc);
+                  $('.sell-upload__items').children('ul').eq(0).append(html);
                 }
                 else if(imgCount >= 4) {
                   $(this).removeClass(function (index,className) {
@@ -65,14 +69,11 @@ $(document).on('turbolinks:load', function() {
                     return (className.match(reg) || []).join(' ');
                   });
                   $(this).addClass('have-item' + count2);
-                  bottomImage(imgsrc);
+                  $('.sell-upload__items').children('ul').eq(1).append(html);
                 }
                 });
-        if (imgCount > 8){
-            dropbox.remove();
-          }
-          function topImage(file) {
-            var list = $('#list1');
+            //プレビュー表示
+          function appendImage(file) {
             var html = `<li class="sell-upload__item">
                   <figure class="sell-upload__figure">
                   <img class="file1" src="${file}">
@@ -82,20 +83,7 @@ $(document).on('turbolinks:load', function() {
                   <a href="">削除</a>
                   </div>
                   </li>`;
-            list.append(html);
-          }
-          function bottomImage(file){
-            var list = $('#list2');
-            var html = `<li class="sell-upload__item">
-                  <figure class="sell-upload__figure">
-                  <img class="file2" src="${file}">
-                  </figure>
-                  <div class="sell-upload__button">
-                  <a href="" class="sell-upload__edit">編集</a>
-                  <a href="">削除</a>
-                  </div>
-                  </li>`;
-            list.append(html);
+            return html;
           }
         };
         reader.readAsDataURL(file);
