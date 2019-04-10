@@ -34,8 +34,8 @@ $(document).on('turbolinks:load', function() {
         return Math.floor(value * base) / base;
         }
         function orgCeil(value,base) {
-        var test = Math.ceil(value * base) / base;
-        return String(test).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+        var inComma = Math.ceil(value * base) / base;
+        return String(inComma).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
         }
     });
     //クリックしてアップロード
