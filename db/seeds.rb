@@ -23,3 +23,6 @@ ShippingMethod.create(shipping_method: 'ゆうメール', delivery_fee_owner_id:
 DeliveryDate.create(delivery_date: '1~2日で発送')
 DeliveryDate.create(delivery_date: '2~3日で発送')
 DeliveryDate.create(delivery_date: '4~7日で発送')
+DeliveryFeeOwner.create(delivery_fee_owner: '送料込み(出品者負担)')
+DeliveryFeeOwner.create(delivery_fee_owner: '着払い(購入者負担)')
+
