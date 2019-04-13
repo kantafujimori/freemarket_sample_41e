@@ -1,4 +1,5 @@
-root = Category.create(name:"レディース")
+#レディース
+root = Category.find(1)
 #----------------------------------------------------
 child = root.children.create(name:"トップス")
 child.children.create(name:"Tシャツ/カットソー(半袖/袖なし)")
