@@ -30,6 +30,7 @@ $(document).on('turbolinks:load', function() {
         else{
           $('#charge , #profit').text('-');
         }
+     //小数点処理
         function orgFloor(value,base) {
         return Math.floor(value * base) / base;
         }
@@ -43,7 +44,7 @@ $(document).on('turbolinks:load', function() {
         $('#file').get(0).click();
     });
     //画像プレビュー
-    $('#file').on('change',function (e) {
+    $('#file').on('change',function () {
       if (!this.files.length) {
         alert("画像ファイルを指定してください。");
         return false;
