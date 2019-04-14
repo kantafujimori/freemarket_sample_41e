@@ -1,0 +1,33 @@
+.single-container
+  = render 'users/shared/single-header'
+  .sign-in-main
+    .sign-in-content
+      .sign-in-content__registration
+        アカウントをお持ちでない方はこちら
+        .sign-in-content__a
+          = link_to "/users/signup", class: 'new-user-registration-a' do
+            新規会員登録
+      %hr
+      .sign-in-content__sub
+        .sign-in-content__main
+          .single-content__facebook
+            = image_tag '/flogo-RGB-HEX-Blk-512.png', class: "facebook-img"
+            .single-content__two
+              Facebookで登録
+        .sign-in-content__main
+          .single-content__google
+            = image_tag '/google.png', class: "google-img"
+            .single-content__three
+              Googleで登録
+      = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "sign-in-form"}) do |f|
+        .field
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " メールアドレス"
+        .field
+          %br/
+          = f.password_field :password, autocomplete: "current-password", placeholder: " パスワード"
+        = recaptcha_tags
+        .actions
+          = f.submit "ログイン", :class => "submit_button"
+      = render "users/shared/links"
+  = render 'users/shared/single-footer'

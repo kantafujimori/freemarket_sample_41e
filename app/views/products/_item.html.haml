@@ -1,0 +1,10 @@
+.item-box
+  - if product.images.present?
+    = image_tag product.images.first.image, class: 'item-box__image'
+  .item-box__name
+    = product.name
+  .item-box__price
+    ¥
+    = product.price
+  .item-box__tax
+    (税込)
