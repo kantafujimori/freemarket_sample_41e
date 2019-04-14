@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_072749) do
+ActiveRecord::Schema.define(version: 2019_04_13_144510) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_categories_on_parent_id"
+  end
 
   create_table "delivery_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "delivery_date", null: false
@@ -42,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_04_04_072749) do
     t.bigint "shipping_method_id"
     t.bigint "delivery_fee_owner_id"
     t.bigint "delivery_date_id"
+    t.bigint "Category_id"
+    t.index ["Category_id"], name: "index_products_on_Category_id"
     t.index ["delivery_date_id"], name: "index_products_on_delivery_date_id"
     t.index ["delivery_fee_owner_id"], name: "index_products_on_delivery_fee_owner_id"
     t.index ["name"], name: "index_products_on_name"
@@ -68,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_04_04_072749) do
   end
 
   add_foreign_key "images", "products"
+  add_foreign_key "products", "Categories"
   add_foreign_key "products", "delivery_dates"
   add_foreign_key "products", "delivery_fee_owners"
   add_foreign_key "products", "shipping_methods"
