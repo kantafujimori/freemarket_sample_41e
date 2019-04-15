@@ -34,6 +34,6 @@ class SellsController < ApplicationController
 
   def sell_params
     params.require(:product).permit(:delivery_fee_owner_id, :shipping_method_id,:delivery_date_id, :name, :info, :price, :status,
-    images_attributes:[ :product_id,image: []])
+    :size_id, :category_id, images_attributes: [ :product_id, image: []])
   end
 end
