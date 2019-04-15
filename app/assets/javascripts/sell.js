@@ -1,32 +1,51 @@
 $(document).on('turbolinks:load', function() {
   //カテゴリー
+  var middleCategory = $('#category-middle');
+  var bottomCategory = $('#category-bottom');
   $('#category-top').on('change',function () {
     var value = $('#category-top option:selected').val();
-    console.log(value);
-    if (value.length){
+    bottomCategory.hide();
+    if (value != '' ){
       $.ajax({
         url: '/sells/category_middle',
         type: "get",
         data: {
           parent_id: value
         }
-      });
+      })
+    .done (function () {
+        middleCategory.show();
+      })
+    }
+    else{
+      middleCategory.hide();
     }
   });
   $('#category-middle').on('change',function () {
-    var top = $('#category-top option:selected').val();
-    var value = $('#category-middle option:selected').val();
-    $.ajax({
-      url: '/sells/category_bottom',
-      type: "get",
-      data: {
-        top_id: top,
-        parent_id: value,
-      }
-    })
+    var topValue = $('#category-top option:selected').val();
+    var middleValue = $('#category-middle option:selected').val();
+    if (topValue != '') {
+      $.ajax({
+        url: '/sells/category_bottom',
+        type: "get",
+        data: {
+          top_id: topValue,
+          parent_id: middleValue,
+        }
+      })
+        .done (function () {
+          bottomCategory.show();
+        })
+    }
   });
   $('#category-bottom').on('change',function () {
-    html = ``
+    var bottomValue = $('#category-bottom option:selected').val();
+    if (bottomValue  != '') {
+      $('#brand').addClass('display-block');
+    }
+    else{
+      $('#brand').removeClass('display-block');
+    }
   });
     //配送方法
     $('#delivery_fee_owner').on("change",function() {

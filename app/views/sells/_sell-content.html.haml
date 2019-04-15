@@ -42,7 +42,7 @@
               %span.sell-content__detail_require.form-require
                 必須
               .sell-content__select-wrap#category-top
-                = f.select :category_id, options_from_collection_for_select( Category.roots, :id, :name),{prompt: "---"},class:"sell-content__select-default"
+                = f.select :category_id, options_from_collection_for_select( Category.roots.sort, :id, :name),{prompt: "---"},class:"sell-content__select-default"
                 %i.fas.fa-chevron-down
               .sell-content__select-wrap#category-middle
               .sell-content__select-wrap#category-bottom
