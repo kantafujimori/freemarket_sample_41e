@@ -1,0 +1,1 @@
+$('#category-middle').html('<%= j(select :product,:category_id,options_from_collection_for_select(@categories.children, :id, :name),{},{class:"sell-content__select-default"})%>');

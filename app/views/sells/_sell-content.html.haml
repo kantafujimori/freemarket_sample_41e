@@ -41,8 +41,17 @@
               = f.label "カテゴリー"
               %span.sell-content__detail_require.form-require
                 必須
+              .sell-content__select-wrap#category-top
+                = f.select :category_id, options_from_collection_for_select( Category.roots, :id, :name),{prompt: "---"},class:"sell-content__select-default"
+                %i.fa.fa-angle-down.fa-2x
+              .sell-content__select-wrap#category-middle
+              .sell-content__select-wrap#category-bottom
+            .sell-content__detail_form.form-group
+              = f.label "サイズ"
+              %span.sell-content__detail_require.form-require
+                必須
               .sell-content__select-wrap
-                %select.sell-content__select-default
+                = f.select :status, Product.statuses.keys, {}, class: "sell-content__select-default"
                 %i.fa.fa-angle-down.fa-2x
             .sell-content__detail_form.form-group
               = f.label "商品の状態"

@@ -6,6 +6,8 @@ class SellsController < ApplicationController
     #https://www.mercari.com/jp/sell/の部分
     @sell = Product.new
     @shipping_method = ShippingMethod.new
+    @categories = Category.eager_load(children: :children).where(parent_id: nil)
+
   end
 
   def create
@@ -22,6 +24,12 @@ class SellsController < ApplicationController
     render partial: 'sells/shipping_method', locals: { delivery_fee_owner_id: params[:delivery_fee_owner_id] }
   end
 
+  def category_middle
+    @categories = Category.roots.find_by(id: params[:parent_id])
+  end
+  def category_bottom
+    @categories = Category.roots.find_by(id: params[:top_id]).children.find(params[:parent_id])
+  end
   private
 
   def sell_params
