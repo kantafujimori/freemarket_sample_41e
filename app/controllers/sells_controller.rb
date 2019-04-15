@@ -25,10 +25,10 @@ class SellsController < ApplicationController
   end
 
   def category_middle
-    @categories = Category.roots.find_by(id: params[:parent_id])
+    @categories = Category.roots.find(params[:parent_id])
   end
   def category_bottom
-    @categories = Category.roots.find_by(id: params[:top_id]).children.find(params[:parent_id])
+    @categories = Category.roots.find(params[:top_id]).children.find(params[:parent_id])
   end
   private
 
