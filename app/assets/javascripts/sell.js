@@ -3,14 +3,14 @@ $(document).on('turbolinks:load', function() {
   var middleCategory = $('#category-middle');
   var bottomCategory = $('#category-bottom');
   $('#category-top').on('change',function () {
-    var value = $('#category-top option:selected').val();
+    var topValue = $('#category-top option:selected').val();
     bottomCategory.hide();
-    if (value != '' ){
+    if (topValue != '' ){
       $.ajax({
         url: '/sells/category_middle',
         type: "get",
         data: {
-          parent_id: value
+          parent_id: topValue
         }
       })
     .done (function () {
