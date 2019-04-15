@@ -64,7 +64,7 @@
               %span.sell-content__detail_require.form-require
                 必須
               .sell-content__select-wrap
-                = f.select :status, Product.statuses.keys, {}, class: "sell-content__select-default"
+                = f.select :status, Product.statuses.keys, {prompt: "---"}, class: "sell-content__select-default"
                 %i.fa.fa-angle-down.fa-2x
         .sell-content.clearfix
           %h3.sell-content__delivery-head.sub-head 配送について
@@ -93,7 +93,7 @@
                   %span.sell-content__delivery_require.form-require
                     必須
                 .sell-content__select-wrap
-                  %select.sell-content__select-default
+                  = f.select :shipping_from, Product.shipping_froms.keys, {prompt: "---"}, class: "sell-content__select-default"
                   %i.fa.fa-angle-down.fa-2x
             .sell-content__delivery_form_wrap.form-group
               .sell-content__delivery_form
