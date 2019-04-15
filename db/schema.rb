@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_143033) do
+ActiveRecord::Schema.define(version: 2019_04_15_144836) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -53,12 +53,14 @@ ActiveRecord::Schema.define(version: 2019_04_15_143033) do
     t.bigint "Category_id"
     t.string "brand"
     t.integer "shipping_from"
+    t.bigint "size_id"
     t.index ["Category_id"], name: "index_products_on_Category_id"
     t.index ["brand"], name: "index_products_on_brand"
     t.index ["delivery_date_id"], name: "index_products_on_delivery_date_id"
     t.index ["delivery_fee_owner_id"], name: "index_products_on_delivery_fee_owner_id"
     t.index ["name"], name: "index_products_on_name"
     t.index ["shipping_method_id"], name: "index_products_on_shipping_method_id"
+    t.index ["size_id"], name: "index_products_on_size_id"
   end
 
   create_table "shipping_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,4 +94,5 @@ ActiveRecord::Schema.define(version: 2019_04_15_143033) do
   add_foreign_key "products", "delivery_dates"
   add_foreign_key "products", "delivery_fee_owners"
   add_foreign_key "products", "shipping_methods"
+  add_foreign_key "products", "sizes"
 end
