@@ -50,12 +50,12 @@ ActiveRecord::Schema.define(version: 2019_04_15_150851) do
     t.bigint "shipping_method_id"
     t.bigint "delivery_fee_owner_id"
     t.bigint "delivery_date_id"
-    t.bigint "Category_id"
+    t.bigint "category_id"
     t.string "brand"
     t.integer "shipping_from"
     t.bigint "size_id"
-    t.index ["Category_id"], name: "index_products_on_Category_id"
     t.index ["brand"], name: "index_products_on_brand"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["delivery_date_id"], name: "index_products_on_delivery_date_id"
     t.index ["delivery_fee_owner_id"], name: "index_products_on_delivery_fee_owner_id"
     t.index ["name"], name: "index_products_on_name"
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_04_15_150851) do
   end
 
   add_foreign_key "images", "products"
-  add_foreign_key "products", "Categories"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "delivery_dates"
   add_foreign_key "products", "delivery_fee_owners"
   add_foreign_key "products", "shipping_methods"
