@@ -81,3 +81,4 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem "carrierwave"
 gem 'acts_as_tree'
+gem 'fog'
