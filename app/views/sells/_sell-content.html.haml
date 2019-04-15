@@ -53,12 +53,12 @@
               .sell-content__select-wrap
                 = f.select :status, Product.statuses.keys, {}, class: "sell-content__select-default"
                 %i.fa.fa-angle-down.fa-2x
-            .sell-content__detail_form.form-group.no-margin.display-none
+            .sell-content__detail_form.form-group.no-margin.display-none.brand
               = f.label "ブランド"
               %span.sell-content__detail_require.form-option
                 任意
               .sell-content__select-wrap
-                = f.text_field :name,class: "sell-content__input input-default"
+                = f.text_field :brand,class: "sell-content__input input-default"
             .sell-content__detail_form.form-group
               = f.label "商品の状態"
               %span.sell-content__detail_require.form-require
