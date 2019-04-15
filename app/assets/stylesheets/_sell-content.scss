@@ -134,8 +134,11 @@
         select::-ms-expand {
           display: none;
         }
-        .fa-angle-down {
+        .fa-chevron-down{
+          font-size: 18px;
           color: #888;
+          z-index: 5;
+          top: 30%;
         }
       }
       &__select-default {
