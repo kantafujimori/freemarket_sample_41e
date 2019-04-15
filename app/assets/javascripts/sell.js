@@ -2,9 +2,11 @@ $(document).on('turbolinks:load', function() {
   //カテゴリー
   var middleCategory = $('#category-middle');
   var bottomCategory = $('#category-bottom');
+  var size = $('#size');
   $('#category-top').on('change',function () {
     var topValue = $('#category-top option:selected').val();
     bottomCategory.hide();
+    size.hide();
     if (topValue != '' ){
       $.ajax({
         url: '/sells/category_middle',
@@ -15,6 +17,7 @@ $(document).on('turbolinks:load', function() {
       })
     .done (function () {
         middleCategory.show();
+        size.show();
       })
     }
     else{
@@ -41,7 +44,7 @@ $(document).on('turbolinks:load', function() {
   $('#category-bottom').on('change',function () {
     var bottomValue = $('#category-bottom option:selected').val();
     if (bottomValue  != '') {
-      $('#brand').addClass('display-block');
+      $('#brand,#size').addClass('display-block');
     }
     else{
       $('#brand').removeClass('display-block');

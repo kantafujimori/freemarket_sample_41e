@@ -46,12 +46,12 @@
                 %i.fas.fa-chevron-down
               .sell-content__select-wrap#category-middle
               .sell-content__select-wrap#category-bottom
-            .sell-content__detail_form.form-group.display-none
+            .sell-content__detail_form.form-group.display-none#size
               = f.label "サイズ"
               %span.sell-content__detail_require.form-require
                 必須
               .sell-content__select-wrap
-                = f.select :status, Product.statuses.keys, {}, class: "sell-content__select-default"
+                = f.collection_select :size_id, Size.roots.find(1).children,:id, :size, {prompt: "---"},{class:"sell-content__select-default",id:"size"}
                 %i.fas.fa-chevron-down.fa-2x
             .sell-content__detail_form.form-group.no-margin.display-none#brand
               = f.label "ブランド"
