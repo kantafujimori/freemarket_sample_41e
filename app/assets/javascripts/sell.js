@@ -91,32 +91,34 @@ $(document).on('turbolinks:load', function() {
         }
     });
     //クリックしてアップロード
+    var formCount = 0;
     $('#file-upload').on('click',function () {
-        $('#file').get(0).click();
+      console.log(formCount);
+      var test = $('input[name="images[image]['+formCount+']"]').eq(formCount);
+      console.log(test);
+        $('#file-upload').children('input[name="product[images_attributes]['+ formCount+'][image][]"]')[0].click();
     });
     //画像プレビュー
-    $('#file').on('change',function () {
-      if (!this.files.length) {
-        alert("画像ファイルを指定してください。");
-        return false;
-      }
-      var files = $(this).prop('files');
-      var len = files.length;
-      for ( var i = 0; i < len; i++ ) {
-        var file = files[i];
-        var reader = new FileReader();
+    $('#file-upload').on('change',$('#file-upload').children('input[name="product[images_attributes]['+ formCount +'][image][]"]'),function (e) {
+      var imgCount= $('.sell-upload__item').length;
+      // if (!this.files.length) {
+      //   alert("画像ファイルを指定してください。");
+      //   return false;
+      // }
+      var file = e.target.files[0];
+      var reader = new FileReader();
 
-      }
         reader.onload = function (e) {
+          formCount += 1;
+          var count = 1 + imgCount;
+          var count2 = 4 - imgCount;
             var imgsrc = e.target.result;
-            var imgCount= $('.sell-upload__item').length;
+            console.log(imgCount);
             var dropbox = $('.sell-upload__drop-box');
             if (imgCount > 8){
               dropbox.remove();
             }
               dropbox.each(function () {
-                var count = 1 + imgCount;
-                var count2 = 4 - imgCount;
                 var html = appendImage(imgsrc);
                 if (imgCount <= 4) {
                   $(this).removeClass(function (index,className) {
@@ -126,6 +128,8 @@ $(document).on('turbolinks:load', function() {
                   });
                   $(this).addClass('have-item-' + count);
                   $('.sell-upload__items').children('ul').eq(0).append(html);
+                  image_tag = build_file_tag(count);
+                  dropbox.append(image_tag);
                 }
                 else if(imgCount >= 4) {
                   $(this).removeClass(function (index,className) {
@@ -138,6 +142,10 @@ $(document).on('turbolinks:load', function() {
                 }
                 });
             //プレビュー表示
+          function build_file_tag(num) {
+            var html = `<input multiple=true name="product[images_attributes][${num}][image][]" style="display: none;" type="file" id="image${num}">`
+            return html;
+          }
           function appendImage(file) {
             var html = `<li class="sell-upload__item">
                   <figure class="sell-upload__figure">

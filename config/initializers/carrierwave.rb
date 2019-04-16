@@ -7,5 +7,4 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'freemarketsample41e'
-  config.cache_storage = :fog
 end

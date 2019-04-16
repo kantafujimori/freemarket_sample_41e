@@ -7,7 +7,11 @@ class ImagesUploader < CarrierWave::Uploader::Base
   elsif Rails.env.test?
     storage :file
   else
-    storage :fog
+    CarrierWave.configure do |config|
+      # productionのもろもろの設定
+      storage :fog
+      config.cache_storage = :fog # fogを使う環境だけに適用！
+    end
   end
 
   def store_dir
