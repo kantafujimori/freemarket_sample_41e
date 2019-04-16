@@ -2,15 +2,13 @@ class ImagesUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+
   if Rails.env.development?
     storage :fog
   elsif Rails.env.test?
     storage :file
   else
-    CarrierWave.configure do |config|
-      storage :fog
-      config.cache_storage = :fog
-    end
+    storage :fog
   end
 
   def store_dir
