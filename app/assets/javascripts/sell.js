@@ -93,27 +93,19 @@ $(document).on('turbolinks:load', function() {
     //クリックしてアップロード
     var formCount = 0;
     $('#file-upload').on('click',function () {
-      console.log(formCount);
       var test = $('input[name="images[image]['+formCount+']"]').eq(formCount);
-      console.log(test);
         $('#file-upload').children('input[name="product[images_attributes]['+ formCount+'][image][]"]')[0].click();
     });
     //画像プレビュー
     $('#file-upload').on('change',$('#file-upload').children('input[name="product[images_attributes]['+ formCount +'][image][]"]'),function (e) {
       var imgCount= $('.sell-upload__item').length;
-      // if (!this.files.length) {
-      //   alert("画像ファイルを指定してください。");
-      //   return false;
-      // }
       var file = e.target.files[0];
       var reader = new FileReader();
-
         reader.onload = function (e) {
           formCount += 1;
           var count = 1 + imgCount;
           var count2 = 4 - imgCount;
             var imgsrc = e.target.result;
-            console.log(imgCount);
             var dropbox = $('.sell-upload__drop-box');
             if (imgCount > 8){
               dropbox.remove();

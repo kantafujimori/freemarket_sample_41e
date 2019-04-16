@@ -1,11 +1,8 @@
 class SellsController < ApplicationController
   def index
-   #https://www.mercari.com/jp/mypage/listings/listing/の部分
   end
   def new
-    #https://www.mercari.com/jp/sell/の部分
     @sell = Product.new
-    #@image = @sell.images.build
     @shipping_method = ShippingMethod.new
     @categories = Category.eager_load(children: :children).where(parent_id: nil)
 
@@ -38,18 +35,4 @@ class SellsController < ApplicationController
     params.require(:product).permit(:delivery_fee_owner_id, :shipping_method_id,:delivery_date_id, :name, :info, :price, :status,
     :size_id, :category_id, :shipping_from, :brand, images_attributes: {image: []})
   end
-
-  # def photo_params
-  #   params.require(:images).permit(image:[])
-  # end
-  #
-  # def save_images(item, images)
-  #   if images.present?
-  #     return false if item.id.blank?
-  #     images.each do |name|
-  #       @image = item.images.new(image: name.to_s)
-  #       @image.save!
-  #     end
-  #   end
-  # end
 end

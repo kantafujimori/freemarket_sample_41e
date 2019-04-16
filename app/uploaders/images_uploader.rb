@@ -8,9 +8,8 @@ class ImagesUploader < CarrierWave::Uploader::Base
     storage :file
   else
     CarrierWave.configure do |config|
-      # productionのもろもろの設定
       storage :fog
-      config.cache_storage = :fog # fogを使う環境だけに適用！
+      config.cache_storage = :fog
     end
   end
 
