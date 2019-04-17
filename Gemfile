@@ -52,6 +52,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'rails-controller-testing'
+  gem 'squasher'
 end
 
 group :development do
@@ -77,6 +78,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'devise'
 gem 'jquery-rails'
-# gem 'font-awesome-rails'
+gem 'erb2haml'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'recaptcha', require: "recaptcha/rails"
 gem 'font-awesome-sass', '~> 5.4.1'
 gem "carrierwave"
+gem 'acts_as_tree'
+gem 'fog'

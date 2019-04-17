@@ -1,0 +1,24 @@
+.single-container
+  = render 'users/shared/single-header'
+  .single-main
+    .single-content
+      .single-content__header
+        新規会員登録
+      %hr
+      .single-content__message
+        .single-content__mail
+          %i{ class: "fas fa-envelope fa-2x"}
+          = link_to '/users/sign_up', class: "mercari-registration" do
+            .single-content__one
+              メールアドレスで登録
+      .single-content__message
+        .single-content__facebook
+          = image_tag '/flogo-RGB-HEX-Blk-512.png', class: "facebook-img"
+          .single-content__two
+            Facebookで登録
+      .single-content__message
+        .single-content__google
+          = image_tag '/google.png', class: "google-img"
+          .single-content__three
+            Googleで登録
+  = render 'users/shared/single-footer'

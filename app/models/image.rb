@@ -1,4 +1,7 @@
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 class Image < ApplicationRecord
-  belongs_to :product,optional: true
-  validates :product_id, presence: true
+  mount_uploaders :image, ImagesUploader
+  belongs_to :product, optional: true
 end

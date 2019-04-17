@@ -18,6 +18,13 @@
     border: 1px solid #ea352d;
     color: #fff;
   }
+  @mixin btn-gray{
+    width: 45%;
+    margin: 24px auto 0;
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+  }
   @mixin form-container {
     width: 700px;
     margin: 0 auto;
@@ -31,7 +38,7 @@
   @mixin btn-default {
     display: block;
     width: 100%;
-    line-height: 48px;
+    line-height: 10px;
     font-size: 14px;
     border: 1px solid transparent;
     -webkit-transition: all ease-out .3s;
