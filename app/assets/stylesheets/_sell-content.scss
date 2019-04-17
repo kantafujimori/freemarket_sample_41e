@@ -209,11 +209,8 @@
       }
       &__btn-gray {
         @include btn-default;
-        width: 45%;
-        margin: 24px auto 0;
-        background: #aaa;
-        border: 1px solid #aaa;
-        color: #fff;
+        @include btn-gray;
+        line-height: 48px;
       }
     }
   }
