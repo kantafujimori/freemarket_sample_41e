@@ -94,10 +94,10 @@ $(document).on('turbolinks:load', function() {
     var formCount = 0;
     $('#file-upload').on('click',function () {
       var test = $('input[name="images[image]['+formCount+']"]').eq(formCount);
-        $('#file-upload').children('input[name="product[images_attributes]['+ formCount+'][image][]"]')[0].click();
+        $('#file-upload').children('input[name="images[image][' + formCount + ']"]')[0].click();
     });
     //画像プレビュー
-    $('#file-upload').on('change',$('#file-upload').children('input[name="product[images_attributes]['+ formCount +'][image][]"]'),function (e) {
+    $('#file-upload').on('change',$('#file-upload').children('input[name="images[image][' + formCount + ']"]'),function (e) {
       var imgCount= $('.sell-upload__item').length;
       var file = e.target.files[0];
       var reader = new FileReader();
@@ -135,7 +135,7 @@ $(document).on('turbolinks:load', function() {
                 });
             //プレビュー表示
           function build_file_tag(num) {
-            var html = `<input multiple=true name="product[images_attributes][${num}][image][]" style="display: none;" type="file" id="image${num}">`
+            var html = `<input name="images[image][${num}]" style="display: none;" type="file" id="image${num}">`;
             return html;
           }
           function appendImage(file) {
