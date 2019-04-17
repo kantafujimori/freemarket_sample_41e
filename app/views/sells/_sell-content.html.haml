@@ -17,8 +17,8 @@
               .sell-upload__items
                 %ul
             .sell-upload__drop-box.have-item-0#file-upload
-              = f.fields_for :images, @sell.images.build do |f|
-                = f.file_field :image,multiple:true,id:'file',style:"display: none;"
+              = f.fields_for @image, @sell.images.build do |f|
+                = f.file_field :image,name: 'images[image][0]',id:'file',style:"display: none;"
               %pre.visible-pc#btn
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード

@@ -1,6 +1,11 @@
 .item-box
   - if product.images.present?
+<<<<<<< HEAD
     = image_tag product.images.first.image.to_s, class: 'item-box__image'
+=======
+    - product.images.each do |image|
+      = image_tag image.image_url.to_s, class: 'item-box__image'
+>>>>>>> yukihayashi06/master
   .item-box__name
     = product.name
   .item-box__price
