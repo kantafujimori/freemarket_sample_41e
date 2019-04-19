@@ -8,10 +8,8 @@
         .item-details__main__photo__top
           %img{ :src => 'https://public.potaufeu.asahi.com/4e91-p/picture/13545647/061f1eeff8bb2432950152393bddf7cb.jpg', :class => 'item-details__main__photo__top__image'}
         .item-details__main__photo__sub
-          %img{ :src => 'https://public.potaufeu.asahi.com/4e91-p/picture/13545647/061f1eeff8bb2432950152393bddf7cb.jpg', :class => 'item-details__main__photo__sub__image'}
-          %img{ :src => 'https://public.potaufeu.asahi.com/4e91-p/picture/13545647/061f1eeff8bb2432950152393bddf7cb.jpg', :class => 'item-details__main__photo__sub__image'}
-          %img{ :src => 'https://public.potaufeu.asahi.com/4e91-p/picture/13545647/061f1eeff8bb2432950152393bddf7cb.jpg', :class => 'item-details__main__photo__sub__image'}
-          %img{ :src => 'https://public.potaufeu.asahi.com/4e91-p/picture/13545647/061f1eeff8bb2432950152393bddf7cb.jpg', :class => 'item-details__main__photo__sub__image'}
+          - @product.images.each do |image|
+            = image_tag image.image.to_s, class: 'item-details__main__photo__sub__image'
       .item-details__main__table
         %table
           %tbody
