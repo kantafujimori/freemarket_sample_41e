@@ -26,6 +26,7 @@ a:hover {
   padding-bottom: 50px;
 }
 .item-box {
+  color:black;
   background-color: white;
   width: 228px;
   margin-bottom: 20px;
@@ -37,6 +38,7 @@ a:hover {
     object-fit: cover;
   }
   &__name {
+    text-decoration: none;
     margin: 10px 15px;
   }
   &__price {
