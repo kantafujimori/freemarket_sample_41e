@@ -7,7 +7,10 @@ Rails.application.routes.draw do
       get :signup
     end
   end
-  resources :products
-  resources :sells
+  resources :products do
+    get 'shipping_method', on: :collection
+    get 'category_middle', on: :collection
+    get 'category_bottom', on: :collection
+  end
   resources :buys
 end
