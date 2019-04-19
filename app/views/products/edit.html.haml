@@ -1,4 +1,4 @@
 .single-container
   = render 'users/shared/single-header'
-  = render 'sell-content'
+  = render partial: 'sell-content',locals: {sell:@sell}
   = render 'users/shared/single-footer'
