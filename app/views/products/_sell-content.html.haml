@@ -3,7 +3,7 @@
     .sell-container__inner
       %h2.single-container__head
         商品の情報を入力
-      = form_with model: @sell,url:sells_path, class:"sell-container__form", local:true do |f|
+      = form_with model: sell,class:"sell-container__form", local:true do |f|
         .sell__upload-box
           %h3.sell__upload-box_head
             出品画像
@@ -17,7 +17,7 @@
               .sell-upload__items
                 %ul
             .sell-upload__drop-box.have-item-0#file-upload
-              = f.fields_for @image, @sell.images.build do |f|
+              = f.fields_for @image, sell.images.build do |f|
                 = f.file_field :image,name: 'images[image][0]',id:'file',style:"display: none;"
               %pre.visible-pc#btn
                 ドラッグアンドドロップ
