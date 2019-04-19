@@ -15,7 +15,7 @@ class SellsController < ApplicationController
   def create
     @sell = Product.new(sell_params)
 
-    if @sell.save & save_images(@sell, image_params)
+    if @sell.save! & save_images(@sell, image_params)
       redirect_to sell_path(@sell)
     else
       redirect_to root_path
