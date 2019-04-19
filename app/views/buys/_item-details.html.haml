@@ -6,7 +6,7 @@
     .item-details__main
       .item-details__main__photo
         .item-details__main__photo__top
-          %img{ :src => 'https://public.potaufeu.asahi.com/4e91-p/picture/13545647/061f1eeff8bb2432950152393bddf7cb.jpg', :class => 'item-details__main__photo__top__image'}
+          = image_tag @product.images.first.image.to_s, class: 'item-details__main__photo__top__image'
         .item-details__main__photo__sub
           - @product.images.each do |image|
             = image_tag image.image.to_s, class: 'item-details__main__photo__sub__image'
