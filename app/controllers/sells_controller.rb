@@ -1,6 +1,10 @@
 class SellsController < ApplicationController
   def index
   end
+
+  def show
+  end
+
   def new
     @sell = Product.new
     @shipping_method = ShippingMethod.new
